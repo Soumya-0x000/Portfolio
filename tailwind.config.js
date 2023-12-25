@@ -21,6 +21,9 @@ export default {
             },
             animation: {
                 'spin-slow': 'spin 8s linear infinite',
+            },
+            screens: {
+                '3xl': '1600px' 
             }
         },
     },

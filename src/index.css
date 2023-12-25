@@ -7,3 +7,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.dark {
+    background: #011b3b;
+    color: white;
+}
+.light {
+    color: #011b3b;
+    background-color: white;
+}

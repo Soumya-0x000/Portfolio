@@ -1,9 +1,9 @@
-import { faPinterest, faTwitter, faLinkedin, faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { motion } from 'framer-motion'
-import React, { useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import Logo from '../logo/Logo'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
+import ModeSwitch from '../Modes/ModeSwitch'
+import AnimateText from '../animateText/AnimateText'
 
 const navigationLink = [
     {link: '/', title: 'Home'},
@@ -12,16 +12,11 @@ const navigationLink = [
     {link: '/articles', title: 'Articles'},
 ]
 
-const iconLinks = [
-    {name: faLinkedin, color: '#0e8cec' },
-    {name: faPinterest, color: "#ed072a" },
-    {name: faGithub, color: '' },
-    {name: faTwitter, color: '#2d9ce1' },
-    {name: faDribbble, color: '#e70d6c' },
-]
-
 const Navbar = () => {
     const navigate = useNavigate()
+    const [collapseNav, setCollapseNav] = useState(false)
+    const [showNavOption, setShowNavOption] = useState(false)
+    const [scrWidth, SetScrWidth] = useState(null)
     const [navActive, setNavActive] = useState(Array(navigationLink.length).fill(false))
     const location = useLocation()
 
@@ -37,40 +32,69 @@ const Navbar = () => {
         setNavActive(updatedNavActive)
     }
 
-    return (
-        <div className='flex items-center justify-between w-full px-32 py-2'>
-            <div></div>
-            <div className='flex gap-x-10 text-[17px]'>
-                {navigationLink.map((item, index) => (
-                    <div 
-                    className='flex flex-col' 
-                    key={index}>
-                        <span 
-                        className='cursor-pointer relative navLink' 
-                        onClick={() => navigate(item.link)}
-                        onMouseEnter={() => handleMouseEnter(index)}
-                        onMouseLeave={() => handleMouseLeave(index)}>
-                            {item.title}
+    useLayoutEffect(() => {
+        const handleResize = () => {
+            const widthScr = window.innerWidth
+            SetScrWidth(widthScr)
 
-                            <span className={`bg-black absolute h-[1px] -bottom-0.5 left-0 ${location.pathname === item.link || navActive[index] ? 'w-full' : 'w-0'} transition-[width] ease-linear duration-300 `}>&nbsp;</span>
-                        </span>
+            if(widthScr <= 1024) {
+                setCollapseNav(true)
+            } else {
+                setCollapseNav(false)
+                setShowNavOption(false)
+            }
+        }
+
+        handleResize()
+
+        window.addEventListener('resize', handleResize)
+        
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
+
+    return (
+        <div className='flex items-center justify-between w-full px-1 2xl:px-32 py-2 relative mb-[30px] lg:mb-0'>
+            <div className=' w-full flex items-center justify-between px-3'>
+                {collapseNav ? (
+                    <FontAwesomeIcon 
+                        icon={faBars}
+                        className='text-[23px] sm:text-[25px]'
+                        onClick={() => setShowNavOption(!showNavOption)}
+                    /> 
+                ) : (
+                    <div className='flex gap-x-10 text-[17px]'>
+                        {navigationLink.map((item, index) => (
+                            <div 
+                            className='flex flex-col' 
+                            key={index}>
+                                <span 
+                                className='cursor-pointer relative navLink' 
+                                onClick={() => navigate(item.link)}
+                                onMouseEnter={() => handleMouseEnter(index)}
+                                onMouseLeave={() => handleMouseLeave(index)}>
+                                    {item.title}
+                                    <span className={`bg-black absolute h-[1px] -bottom-0.5 left-0 ${location.pathname === item.link || navActive[index] ? 'w-full' : 'w-0'} transition-[width] ease-linear duration-300 `}>&nbsp;</span>
+                                </span>
+                            </div>
+                        ))}
                     </div>
-                ))}
+                )}
+
+                <ModeSwitch/>
+                
+                <div className='hidden sm:block' onClick={() => navigate(`/`)}>
+                    <AnimateText mainText={'Portfolio'}/>
+                </div>
             </div>
 
-            <Logo/>
+            <div>
+                {showNavOption && (
+                    <div>
 
-            <div className='flex gap-x-5'>
-                {iconLinks.map((item, index) => (
-                    <motion.div whileHover={{y: -3}} className='w-6 ' key={index} >
-                        <FontAwesomeIcon 
-                            icon={item.name} 
-                            style={{color: item.color}} 
-                            className='w-full h-full cursor-pointer'
-                            key={index} 
-                        />
-                    </motion.div>
-                ))}
+                    </div>
+                )}
             </div>
         </div>
     )
