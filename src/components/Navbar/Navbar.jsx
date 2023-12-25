@@ -39,6 +39,7 @@ const Navbar = () => {
 
     return (
         <div className='flex items-center justify-between w-full px-32 py-2'>
+            <div></div>
             <div className='flex gap-x-10 text-[17px]'>
                 {navigationLink.map((item, index) => (
                     <div 

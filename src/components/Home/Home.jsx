@@ -40,9 +40,9 @@ const Home = () => {
                 <img src={mySelf} className='w-full h-full' />
             </div>
 
-            <div className='space-y-5 max-w-[300px] md:max-w-[750px] flex flex-col items-center justify-center'>
+            <div className='space-y-5 max-w-[300px] md:max-w-[750px] flex flex-col items-center md:items-start justify-center'>
                 <motion.div 
-                className='text-[27px] lg:4xl xl:text-6xl overflow-hidden max-w-[] mt-6 md:mt-0 font-bold leading-[1.2] flex items-center justify-center flex-wrap'
+                className='pb-1 text-[27px] lg:4xl xl:text-6xl overflow-hidden mt-6 md:mt-0 font-bold leading-[1.2] flex items-center justify-center md:justify-start flex-wrap'
                 variants={animateHeading}
                 initial='initial'
                 animate='animate'>
@@ -56,7 +56,7 @@ const Home = () => {
                     ))}
                 </motion.div>
                 
-                <div className='text-[11.5px] lg:text-lg text-justify'>
+                <div className='text-[11.5px] lg:text-lg text-justify md:text-start'>
                     As a skilled frontend developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js and web development.
                 </div>
             
@@ -64,7 +64,7 @@ const Home = () => {
                     <a href="../../assets/Soumya_Resume.pdf"
                     download={true}>
                         <button 
-                        className='bg-black text-white px-3 md:px-6 py-1 md:py-2 rounded-lg text-sm md:text-lg ring-2 ring-white'>
+                        className='bg-black text-white px-3 md:px-6 py-2 rounded-lg text-sm md:text-lg ring-2 ring-white'>
                             Resume 
                             <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ml-3' />
                         </button>
