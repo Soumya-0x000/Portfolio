@@ -7,6 +7,7 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import HireMe from '../hireMe/HireMe'
 import SocialMEdiaIcon from '../SocialMEdiaIcon/SocialMEdiaIcon'
 import Tilt from 'react-parallax-tilt';
+import { useTheme } from '../hook/ThemeContext'
 
 
 const animateHeading = {
@@ -37,6 +38,7 @@ const eachWord = {
 }
 
 const Home = () => {
+    const {mode} = useTheme()
     const text = 'Myself Soumya who loves to Code And Design.'
 
     const ArrayOfColor = ['violet', 'pink', 'green', 'magenta', 'blue', 'yellow', 'amber', 'lime', 'emerald', 'teal', 'cyan', 'sky', 'purple', 'fuchsia', 'rose']
@@ -45,7 +47,7 @@ const Home = () => {
 
 
     return (
-        <div className='bg- text- relative'>
+        <div className={`${mode === 'dark' ? 'bg-darkSlate text-lighter' : 'cont'} text- relative pt-[30px] lg:pt-0`}>
             {/* Main */}
             <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] md:max-h-[1200px] lg:h-screen'>
                 {/* TiltImg Image */}
@@ -88,7 +90,7 @@ const Home = () => {
                         </a>
 
                         <a href="mailto:soumyadas429@gmail.com">
-                            <span className='border-b-2 border-b-black text-xl cursor-pointer'>Contact</span>
+                            <span className={`border-b-2 pb-1 ${mode === 'dark' ? 'border-b-white' : 'border-b-black'} text-xl cursor-pointer`}>Contact</span>
                         </a>
                     </div>
                 </div>

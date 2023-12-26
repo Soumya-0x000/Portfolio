@@ -24,6 +24,12 @@ export default {
             },
             screens: {
                 '3xl': '1600px' 
+            },
+            colors: {
+                'darkBlue': '#00122c',
+                'darkSlate': 'rgb(15 23 42 / 1)',
+                'light': 'rgb(203 213 225 / 1)',
+                'lighter': 'rgb(226 232 240 / 1)'
             }
         },
     },
