@@ -56,7 +56,7 @@ const Home = () => {
                 </Tilt>
 
                 {/* Description */}
-                <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 '>
+                <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 mb-5 '>
                     <motion.div 
                     className='pb-1 text-[28px] sm:text-5xl xl:text-6xl mt-6 md:mt-0 font-bold flex items-center justify-center lg:justify-start flex-wrap'
                     variants={animateHeading}
@@ -75,8 +75,9 @@ const Home = () => {
                     <div className='text-[11.5px] sm:text-[15px] lg:text-lg text-justify lg:text-start w-full'>
                         As a skilled frontend developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js and web development.
                     </div>
-                
-                    <div className='flex items-center gap-x-6 md:pb-16 lg:pb-0'>
+                            
+                    {/* Resume, contact */}
+                    <div className='flex items-center gap-x-6'>
                         <a href="../../assets/Soumya_Resume.pdf"
                         download={true}>
                             <button 
@@ -99,14 +100,9 @@ const Home = () => {
             </div>
             
             {/* Bulb */}
-            <div className='hidden lg:block w-20 xl:w-24 absolute right-6 bottom-4'>
+            <div className='hidden lg:block w-20 xl:w-24 absolute right-6 bottom-20'>
                 <img src={bulb} className='w-full'/>            
-            </div>
-
-            {/* Socialmedia Icons */}
-            <span className='flex items-center justify-center py-5 2xl:py-0 2xl:fixed 2xl:right-3 2xl:top-1/2 2xl:-translate-y-1/2'>
-                <SocialMEdiaIcon/>
-            </span>
+            </div>            
         </div>
     )
 }

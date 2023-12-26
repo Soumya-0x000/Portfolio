@@ -12,7 +12,6 @@ const ParticleContainer = () => {
 
     return (
         <Particles
-        className="w-full h-full absolute top-0 left-0"
             id="tsparticles"
             init={particlesInit}
             loaded={particlesLoaded}
@@ -47,10 +46,10 @@ const ParticleContainer = () => {
                 },
                 particles: {
                     color: {
-                        value: "#ffffff",
+                        value: ["#ffffff"], // Array of colors
                     },
                     links: {
-                        color: "#ffffff",
+                        color: ["#ffffff"], // Array of colors
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
@@ -85,6 +84,7 @@ const ParticleContainer = () => {
                 },
                 detectRetina: true,
             }}
+            
         />
     );
 };

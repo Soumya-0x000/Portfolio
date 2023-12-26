@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { RiAccountCircleLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 
@@ -13,12 +13,16 @@ const AnimateText = ({mainText}) => {
 const CYCLES_PER_LETTER = 2;
 const SHUFFLE_TIME = 50;
 
-const CHARS = "!@#$%^&*():{};|,.<>/?";
+const CHARS = "!@#$%^&*()-_=+:{}[]:;|,.<>/?";
 
 const EncryptButton = ({mainText}) => {
     const intervalRef = useRef(null);
 
     const [text, setText] = useState(mainText);
+    
+    useEffect(() => {
+        setText(mainText);
+    }, [mainText]);
 
     const scramble = () => {
         let pos = 0;

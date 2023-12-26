@@ -24,7 +24,7 @@ const HireMe = () => {
         <span className='fixed items-center justify-center overflow-hidden' style={positionStyles}>
             <span className='w-24 sm:w-32 lg:w-48 h-auto flex items-center justify-center relative'>
                 <img src={circularText} className='w-full h-full animate-spin-slow fill-black' />
-                <a href="mailto:soumyadas429@gmail.com" className='absolute flex items-center justify-center rounded-full  left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2  bg-black text-white  text-[10.5px] sm:text-[13px] lg:text-lg h-[3rem] sm:h-[4rem] lg:h-[5.5rem] w-[3rem] sm:w-[4rem] lg:w-[5.5rem] font-semibold border border-black hover:text-black hover:bg-white transition-all'>Hire Me</a>
+                <a href="mailto:soumyadas429@gmail.com" className='absolute flex items-center justify-center rounded-full  left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2  bg-black text-white  text-[10.5px] sm:text-[13px] lg:text-lg h-[3rem] sm:h-[4rem] lg:h-[5.5rem] w-[3rem] sm:w-[4rem] lg:w-[5.5rem] font-semibold border border-black hover:text-black hover:bg-white transition-all'>Hire Me</a>
             </span>
         </span>
     );
