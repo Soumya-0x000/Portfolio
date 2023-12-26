@@ -95,37 +95,36 @@ const Navbar = () => {
             </div>
 
             {/* Mobile nav option */}
-            {/* <div className=''> */}
-                {showNavOption && (
-                    <motion.div 
-                    className='fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 backdrop-blur-[10px] bg-[#1affa083] text-violet-950 rounded-lg p-16 gap-y-4 space-y-3 gap-[50px] transition-all'
-                   
-                    >
-                        {navigationLink.map((item, index) => (
-                            <div 
-                            className={`
-                                px-4 py-2 rounded-full 
-                                flex items-center gap-2 
-                                text-slate-800
-                                shadow-[-5px_-3px_4px_rgba(255,_255,_255,_0.4),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
-                                transition-all
-                                hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
-                                hover:text-violet-600 text-[17px]
-                                bg-[#ffe86494] cursor-pointer
-                            `}
-                            onClick={() => navigate(item.link)}
-                            key={index}>
-                                {item.icon}
-                                <span
-                                onMouseEnter={() => handleMouseEnter(index)}
-                                onMouseLeave={() => handleMouseLeave(index)}>
-                                    {item.title}
-                                </span>
-                            </div>
-                        ))}
-                    </motion.div>
-                )}
-            {/* </div> */}
+            {showNavOption && (
+                <motion.div 
+                className='fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 backdrop-blur-[10px] bg-[#1affa083] text-violet-950 rounded-lg py-10 px-16 ring-black space-y-7 gap-[50px]'
+                initial={{ opacity: 0, scale: 0, x: '-50%', y: '-50%' }}
+                animate={{ opacity: 1, scale: 1 }}
+                >
+                    {navigationLink.map((item, index) => (
+                        <div 
+                        className={`
+                            px-4 py-2 rounded-full cursor-pointer
+                            flex items-center gap-3 text-[17px]
+                            text-slate-800
+                            shadow-[-5px_-3px_4px_rgba(255,_255,_255,_0.8),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
+                            transition-all
+                            hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
+                            hover:text-violet-500
+                            bg-[#ffe86474]
+                        `}
+                        onClick={() => navigate(item.link)}
+                        key={index}>
+                            {item.icon}
+                            <span 
+                            onMouseEnter={() => handleMouseEnter(index)}
+                            onMouseLeave={() => handleMouseLeave(index)}>
+                                {item.title}
+                            </span>
+                        </div>
+                    ))}
+                </motion.div>
+            )}
         </div>
     )
 }
