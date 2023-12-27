@@ -4,10 +4,11 @@ import bulb from '../../assets/bulb.svg'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
-import HireMe from '../hireMe/HireMe'
+import HireMe from './hireMe/HireMe'
 import Tilt from 'react-parallax-tilt';
-import { useTheme } from '../hook/ThemeContext'
+import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import './home.css'
+import { CardSpotlight } from '../../helpingComponents/colorHover/ColorChangeCursor'
 
 
 const animateHeading = {
@@ -39,7 +40,9 @@ const eachWord = {
 
 const Home = () => {
     const {mode} = useTheme()
-    const text = 'Myself Soumya who loves to Code And Design.'
+    const text = 'Myself Soumya, who loves to Code And Design.'
+
+    
 
     return (
         <div className={`${mode === 'dark' ? 'bg-darkSlate text-lighter' : 'cont'} text- relative pt-[30px] lg:pt-0`}>
@@ -77,11 +80,10 @@ const Home = () => {
                     <div className='flex items-center gap-x-6'>
                         <a href="../../assets/Soumya_Resume.pdf"
                         download={true}>
-                            <button 
-                            className='bg-black text-white px-3 md:px-6 py-2 rounded-lg text-md md:text-lg ring-2 ring-white flex items-center justify-center flex-shrink-0'>
-                                Resume 
-                                <FontAwesomeIcon icon={faArrowUpRightFromSquare} className='ml-3' />
-                            </button>
+                            <CardSpotlight 
+                                children={'Resume'} 
+                                icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} />} 
+                            />
                         </a>
 
                         <a href="mailto:soumyadas429@gmail.com">

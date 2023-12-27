@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import circularTextDark from '../../assets/circularTextWithoutBGBlack.png';
-import circularTextLight from '../../assets/circularTextWithoutBGWhite.png'
-import { useTheme } from '../hook/ThemeContext'
+import circularTextDark from '../../../assets/circularTextWithoutBGBlack.png';
+import circularTextLight from '../../../assets/circularTextWithoutBGWhite.png'
+import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const HireMe = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);

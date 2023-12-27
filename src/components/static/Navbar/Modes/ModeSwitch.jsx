@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FiMoon, FiSun } from "react-icons/fi";
-import { useTheme } from "../hook/ThemeContext";
+import { useTheme } from "../../../../helpingComponents/hook/ThemeContext";
 
 const TOGGLE_CLASSES =
     "text-sm font-medium flex items-center gap-2 px-3 lg:px-6 py-2 lg:py-3 transition-colors relative z-10";

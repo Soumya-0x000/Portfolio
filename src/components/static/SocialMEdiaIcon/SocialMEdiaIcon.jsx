@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { faLinkedin, faGithub, faInstagram, faXTwitter, faMeta } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useTheme } from '../hook/ThemeContext'
+import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const SocialMEdiaIcon = () => {
     const {mode} = useTheme()

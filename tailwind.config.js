@@ -23,6 +23,7 @@ export default {
                 'spin-slow': 'spin 8s linear infinite',
             },
             screens: {
+                'xxl': '1400px',
                 '3xl': '1600px' 
             },
             colors: {

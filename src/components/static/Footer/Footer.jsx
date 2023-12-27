@@ -1,7 +1,7 @@
 import { faHeart } from '@fortawesome/free-regular-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
-import { useTheme } from '../hook/ThemeContext'
+import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const Footer = () => {
     const {mode} = useTheme()

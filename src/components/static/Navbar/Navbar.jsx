@@ -1,13 +1,13 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import ModeSwitch from '../Modes/ModeSwitch'
-import AnimateText from '../animate/AnimateText'
+import ModeSwitch from './Modes/ModeSwitch'
+import AnimateText from '../../../helpingComponents/animate/AnimateText'
 import { motion } from 'framer-motion'
 import { IoHomeOutline } from "react-icons/io5";
 import { GoProjectSymlink } from "react-icons/go";
 import { MdOutlineArticle } from "react-icons/md";
 import { FaRegAddressCard } from "react-icons/fa"
-import { useTheme } from '../hook/ThemeContext'
+import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const navigationLink = [
     {link: '/', icon: <IoHomeOutline/>, title: 'Home'},
@@ -113,7 +113,10 @@ const Navbar = () => {
                             hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
                             transition-all text-slate-800 ${mode === 'dark' ? 'bg-[#bcff6444] hover:text-violet-600' : 'bg-[#8ed2ff64] hover:text-pink-600'}
                         `}
-                        onClick={() => navigate(item.link)}
+                        onClick={() => {
+                            navigate(item.link)
+                            setShowNavOption(false)
+                        }}
                         key={index}>
                             {item.icon}
                             <span 
