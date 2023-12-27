@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import circularTextDark from '../../assets/circularTextWithoutBG.svg';
-import circularTextLight from '../../assets/circularTextWithoutWhiteBG.png'
+import circularTextDark from '../../assets/circularTextWithoutBGBlack.png';
+import circularTextLight from '../../assets/circularTextWithoutBGWhite.png'
 import { useTheme } from '../hook/ThemeContext'
 
 const HireMe = () => {
@@ -25,7 +25,7 @@ const HireMe = () => {
 
     return (
         <span className='fixed items-center justify-center overflow-hidden' style={positionStyles}>
-            <span className='w-24 sm:w-32 lg:w-[180px] h-auto flex items-center justify-center relative'>
+            <span className='w-24 sm:w-32 lg:w-[186px] h-auto flex items-center justify-center relative'>
                 <img src={mode === 'dark' ? circularTextLight : circularTextDark} className='w-full h-full animate-spin-slow fill-black' />
                 <a 
                 href="mailto:soumyadas429@gmail.com" 
