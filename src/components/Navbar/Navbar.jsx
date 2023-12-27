@@ -61,10 +61,13 @@ const Navbar = () => {
     }, [])
 
     return (
-        <div className={`flex items-center justify-between w-full px-1 2xl:px-32 py-3 relative ${mode === 'dark' ? 'bg-darkBlue text-light' : ''} `}>
+        <div 
+        className={`flex items-center justify-between w-full px-1 2xl:px-32 py-3 relative  ${
+            mode === 'dark' ? 'bg-darkBlue text-light border-b border-b-blue-400' : 'border-b-lighter'
+        } `}>
             <div className=' w-full flex items-center justify-between px-3'>
                 {collapseNav ? (
-                    <div className={`flex items-center justify-center flex-col gap-y-1 rounded-full bg-blue-900 w-10 h-[38px] transition-all cursor-pointer`}
+                    <div className={`flex items-center justify-center flex-col gap-y-1 rounded-full ${mode === 'dark' ? 'bg-blue-800' : 'bg-blue-900'} w-10 h-[38px] transition-all cursor-pointer`}
                     onClick={() => setShowNavOption(!showNavOption)}>
                         <div className={`w-6 transition-all ${showNavOption ? 'rotate-45 translate-y-[3px]' : 'rotate-0'} h-[2px] bg-blue-300`}></div>
                         <div className={`w-6 h-[2px] ${!showNavOption ? 'block' : 'hidden'} bg-blue-300 `}></div>

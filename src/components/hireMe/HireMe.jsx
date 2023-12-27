@@ -25,7 +25,7 @@ const HireMe = () => {
 
     return (
         <span className='fixed items-center justify-center overflow-hidden' style={positionStyles}>
-            <span className='w-24 sm:w-32 lg:w-48 h-auto flex items-center justify-center relative'>
+            <span className='w-24 sm:w-32 lg:w-[180px] h-auto flex items-center justify-center relative'>
                 <img src={mode === 'dark' ? circularTextLight : circularTextDark} className='w-full h-full animate-spin-slow fill-black' />
                 <a 
                 href="mailto:soumyadas429@gmail.com" 
