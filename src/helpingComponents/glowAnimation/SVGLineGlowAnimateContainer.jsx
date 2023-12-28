@@ -7,13 +7,6 @@ const GRADIENT_MOVE_INTERVAL = 10;
 const GLOWING_LINE_HEIGHT = 81;
 const GLOW_COLOR = "#009688";
 
-// const SVGLineGlowAnimateProps = {
-//   movementDelay?: number;
-//   id: number;
-//   additionalHeight?: number;
-//   initialGradientY?: number;
-// };
-
 const SVGLineGlowAnimate = ({ movementDelay = 0, id, additionalHeight = 0, initialGradientY = 0 }) => {
     const svgHeight = 228 + additionalHeight;
     const [gradientPosition, setGradientPosition] = useState({
@@ -35,22 +28,22 @@ const SVGLineGlowAnimate = ({ movementDelay = 0, id, additionalHeight = 0, initi
                 let newOpacity = 0;
 
                 if (distanceTravelled <= halfDistance) {
-                newOpacity = distanceTravelled / halfDistance;
+                    newOpacity = distanceTravelled / halfDistance;
                 } else {
-                newOpacity = 1 - (distanceTravelled - halfDistance) / halfDistance;
+                    newOpacity = 1 - (distanceTravelled - halfDistance) / halfDistance;
                 }
 
                 setOpacity(newOpacity);
 
                 if (newY1 > MAX_GRADIENT_Y - GLOWING_LINE_HEIGHT) {
-                return {
-                    y1: START_GRADIENT_POSITION,
-                    y2: END_GRADIENT_POSITION,
-                };
+                    return {
+                        y1: START_GRADIENT_POSITION,
+                        y2: END_GRADIENT_POSITION,
+                    };
                 }
                 return {
-                y1: newY1,
-                y2: newY2,
+                    y1: newY1,
+                    y2: newY2,
                 };
             });
         };
@@ -79,7 +72,7 @@ const SVGLineGlowAnimate = ({ movementDelay = 0, id, additionalHeight = 0, initi
                 href={`#main-line-${id}`}
                 opacity={opacity}
                 stroke={`url(#gradient-glow-${id})`}
-                strokeWidth="6"
+                strokeWidth="8"
                 style={{
                 filter: `blur(2px) drop-shadow(0px 0px 2px ${GLOW_COLOR})`,
                 transition: `opacity ${GRADIENT_MOVE_INTERVAL}ms linear`,

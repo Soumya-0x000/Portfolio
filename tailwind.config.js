@@ -31,7 +31,20 @@ export default {
                 'darkSlate': 'rgb(15 23 42 / 1)',
                 'light': 'rgb(203 213 225 / 1)',
                 'lighter': 'rgb(226 232 240 / 1)'
-            }
+            },
+            animation: {
+                "text-reveal": "text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s",
+            },
+            keyframes: {
+                "text-reveal": {
+                    "0%": {
+                        transform: "translate(0, 100%)",
+                    },
+                    "100%": {
+                        transform: "translate(0, 0)",
+                    },
+                },
+            },
         },
     },
     plugins: [],
