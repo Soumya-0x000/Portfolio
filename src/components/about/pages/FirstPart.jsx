@@ -78,11 +78,12 @@ const FirstPart = () => {
                     </motion.div>
                     
                     {/* Image */}
-                    <motion.div className={` rounded-2xl overflow-hidden border-2 p-6 ${
-                        mode === 'dark' ? 'border-lighter bg-darkBlue' : 'border-darkSlate bg-slate-400'
-                    } md:min-w-[320px] lg:max-w-[450px] 2xl:max-w-[550px] drop-shadow-md shadow-emerald-300 `}
+                    <motion.div 
+                    className={` rounded-2xl overflow-hidden border-2 p-6 ${
+                        mode === 'dark' ? 'border-lighter bg-darkBlue  drop-shadow-mdDark' : 'border-darkSlate bg-slate-400 drop-shadow-mdLight'
+                    } md:min-w-[320px] lg:max-w-[450px] 2xl:max-w-[550px]`}
                     initial={{y: 1100}}
-                        animate={{y: 0, transition: {duration: .3}}}>
+                    animate={{y: 0, transition: {duration: .3}}}>
                         <img 
                             className='w-full h-full rounded-xl aspect-[1/1.3] 2xl:aspect-[1/1.2] hover:scale-105 transition-all' 
                             src={myself} 

@@ -44,7 +44,7 @@ const Home = () => {
     return (
         <div className={`${mode === 'dark' ? 'bg-darkSlate text-lighter' : 'cont'} text- relative pt-[30px] lg:pt-0`}>
             {/* Main */}
-            <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] max-h-[1200px] md:min-h-screen'>
+            <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen'>
                 {/* TiltImg Image */}
                 <Tilt className=''>
                     <div className={`max-w-[350px] xl:max-w-[900px] min-w-[200px] sm:min-w-[400px] 2xl:min-w-[532px] lg:min-w-[450px] xl:min-w-[500px] 3xl:min-w-[600px] 3xl:min-h-[600px] rounded-full overflow-hidden p- box`}>

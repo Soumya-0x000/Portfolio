@@ -44,6 +44,10 @@ export default {
                     },
                 },
             },
+            dropShadow: {
+                'mdDark': '10px 10px 0px rgba(158, 228, 255, 0.95)',
+                'mdLight': '10px 10px 0px rgba(35, 195, 255, 0.95)',
+            }
         },
     },
     plugins: [],
