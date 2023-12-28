@@ -48,7 +48,7 @@ export const CardSpotlight = ({children, icon}) => {
                 className="pointer-events-none absolute -inset-px opacity-0 transition duration-500"
                 style={{
                     opacity,
-                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, #60fdd863, transparent 40%)`,
+                    background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, #60fdd863, #60D2FD63, transparent 40%)`,
                 }}
             />
             {icon !== null ? (
