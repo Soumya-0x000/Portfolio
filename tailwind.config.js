@@ -19,12 +19,10 @@ export default {
                 jaldi: ['Jaldi', 'sans-serif'],
                 k2d: ['K2D', 'sans-serif']
             },
-            animation: {
-                'spin-slow': 'spin 8s linear infinite',
-            },
             screens: {
                 'xxl': '1400px',
-                '3xl': '1600px' 
+                '3xl': '1600px',
+                '4xl': '1670px'
             },
             colors: {
                 'darkBlue': '#00122c',
@@ -33,6 +31,7 @@ export default {
                 'lighter': 'rgb(226 232 240 / 1)'
             },
             animation: {
+                'spin-slow': 'spin 8s linear infinite',
                 "text-reveal": "text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s",
             },
             keyframes: {

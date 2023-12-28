@@ -61,9 +61,9 @@ const FirstPart = () => {
 
     return (
         <>
-            <div className='flex flex-col xxl:flex-row items-start justify-between text-justify md:text- xxl:text-justify gap-x-[80px] md:px-2 xl:px-6 2xl:px-32 mt-10 xl:mt-20 gap-y-10'>
+            <div className='flex flex-col xxl:flex-row items-start justify-between text-justify xxl:text-justify mt-10 xl:mt-20 gap-x-[80px] gap-y-10'>
                 {/* biography & img */}
-                <div className='w-full flex flex-col-reverse md:flex-row items-start justify-between gap-10 2xl:gap-x-24'>
+                <div className='w-full flex flex-col-reverse md:flex-row items-start justify-between gap-10 4xl:gap-x-24'>
                     {/* Biography */}
                     <motion.div
                     className=' md:max-w-[380px] lg:max-w-[460px] xl:max-w-[600px] xxl:max-w-[580px] space-y-3 h-full xl:pr-10 pt-2'
@@ -84,7 +84,7 @@ const FirstPart = () => {
                     initial={{y: 1100}}
                         animate={{y: 0, transition: {duration: .3}}}>
                         <img 
-                            className='w-full h-full rounded-xl aspect-[1/1.3] hover:scale-105 transition-all' 
+                            className='w-full h-full rounded-xl aspect-[1/1.3] 2xl:aspect-[1/1.2] hover:scale-105 transition-all' 
                             src={myself} 
                         />
                     </motion.div>

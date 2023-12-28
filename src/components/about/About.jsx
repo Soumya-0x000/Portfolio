@@ -2,7 +2,7 @@ import React from 'react'
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import { TextReveal } from '../../helpingComponents/textReveal/TextReveal'
 import FirstPart from './pages/FirstPart'
-import './textReveal.css'
+import Skills from './pages/Skills'
 
 const About = () => {
     const {mode} = useTheme()
@@ -14,7 +14,11 @@ const About = () => {
                 <TextReveal child={'Passion Fuels Purpose!'}/>
             </div>
             
-            <FirstPart/>
+            <div className='md:px-2 xl:px-6 2xl:px-32 '>
+
+                <FirstPart/>
+                <Skills/>
+            </div>
         </div>
     )
 }
