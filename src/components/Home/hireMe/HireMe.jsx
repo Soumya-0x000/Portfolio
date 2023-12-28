@@ -24,7 +24,7 @@ const HireMe = () => {
         : { bottom: 0, left: 0 };
 
     return (
-        <span className='fixed items-center justify-center overflow-hidden' style={positionStyles}>
+        <span className='fixed items-center justify-center overflow-hidden z-10' style={positionStyles}>
             <span className='w-24 sm:w-32 lg:w-[186px] h-auto flex items-center justify-center relative'>
                 <img src={mode === 'dark' ? circularTextLight : circularTextDark} className='w-full h-full animate-spin-slow fill-black' />
                 <a 

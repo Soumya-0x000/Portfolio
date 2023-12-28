@@ -1,7 +1,7 @@
 export const TextReveal = ({child}) => {
     return (
         <>
-            <div className="overflow-hidden ">
+            <div className="overflow-hidden z-30">
                 {[...child].map((char, index) => (
                     <span
                     className="animate-text-reveal inline-block"

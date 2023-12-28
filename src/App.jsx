@@ -3,16 +3,19 @@ import Home from './components/Home/Home'
 import Navbar from './components/static/Navbar/Navbar'
 import Footer from './components/static/Footer/Footer'
 import SocialMEdiaIcon from '../src/components/static/SocialMEdiaIcon/SocialMEdiaIcon'
-import { ThemeProvider } from './helpingComponents/hook/ThemeContext'
+import { ThemeProvider, useTheme } from './helpingComponents/hook/ThemeContext'
 import About from './components/about/About'
 import Projects from './components/projects/Projects'
 import Articles from './components/articles/Articles'
+import StarsCanvas from './helpingComponents/animate/StarCanvas'
 
 function App() {
+    const {mode} = useTheme()
 
     return (
         <BrowserRouter>
             <ThemeProvider>
+                {/* <StarsCanvas/> */}
                 <SocialMEdiaIcon/>
                 <Navbar/>
                 <Routes>

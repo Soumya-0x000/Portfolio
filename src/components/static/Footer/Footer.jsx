@@ -7,9 +7,10 @@ const Footer = () => {
     const {mode} = useTheme()
 
     return (
-        <div className={`px-[1rem] lg:px-16 py-6 border-t  space-y-3 flex items-center justify-center ${mode === 'dark' ? 'bg-darkBlue text-light border-t-blue-300' : 'border-t-black'}`}>
+        <div className={`
+        px-[1rem] lg:px-16 py-6 border-t  space-y-3 flex items-center justify-center relative ${mode === 'dark' ? 'bg-darkBlue text-light border-t-blue-300' : 'border-t-black'}`}>
             <div className='max-w-[1500px]'>
-                <div className={`text-justify w-full md:leading-[22px] text-[11px] sm:text-[14px] lg:text-[16px] `}>
+                <div className={`text-justify w-full md:leading-[22px] text-[11px] sm:text-[14px] lg:text-[16px] z-10`}>
                     Passionate frontend developer skilled in HTML5, CSS, and JavaScript, with expertise in React JS for building scalable and interactive user interfaces. Proficient in Tailwind CSS, SASS for efficient styling and Redux Toolkit for state management in large-scale applications. Experienced in integrating Firebase for versatile backend functionalities. Adept at collaborative development using Git and GitHub. Dedicated to crafting visually appealing and responsive web experiences.
                 </div>
 

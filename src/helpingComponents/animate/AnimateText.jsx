@@ -62,7 +62,7 @@ const EncryptButton = ({mainText}) => {
         <motion.button
         whileHover={{scale: 1.025}}
         whileTap={{scale: 0.975}}
-        className={`group relative overflow-hidden rounded-lg ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-700'} px-2 lg:px-4 py-1 lg:py-2 font-mono font-medium uppercase text-slate-300 transition-colors hover:text-indigo-300`}
+        className={`group z-20 relative overflow-hidden rounded-lg ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-700'} px-2 lg:px-4 py-1 lg:py-2 font-mono font-medium uppercase text-slate-300 transition-colors hover:text-indigo-300`}
         onMouseEnter={scramble}
         onMouseLeave={stopScramble}>
             <div className="relative z-10 flex items-center gap-2">

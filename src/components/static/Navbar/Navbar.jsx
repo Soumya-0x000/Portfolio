@@ -64,7 +64,7 @@ const Navbar = () => {
         <div 
         className={`flex items-center justify-between w-full px-1 2xl:px-32 py-3 relative  ${
             mode === 'dark' ? 'bg-darkBlue text-light border-b border-b-blue-400' : 'border-b-lighter'
-        } `}>
+        } z-10`}>
             <div className=' w-full flex items-center justify-between px-3'>
                 {collapseNav ? (
                     <div className={`flex items-center justify-center flex-col gap-y-1 rounded-full ${mode === 'dark' ? 'bg-blue-800' : 'bg-blue-900'} w-10 h-[38px] transition-all cursor-pointer`}
@@ -80,7 +80,7 @@ const Navbar = () => {
                             className='flex flex-col' 
                             key={index}>
                                 <span 
-                                className='cursor-pointer relative navLink' 
+                                className='cursor-pointer relative ' 
                                 onClick={() => navigate(item.link)}
                                 onMouseEnter={() => handleMouseEnter(index)}
                                 onMouseLeave={() => handleMouseLeave(index)}>
@@ -102,7 +102,7 @@ const Navbar = () => {
             {/* Mobile nav option */}
             {showNavOption && (
                 <motion.div 
-                className={`fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 z-10 backdrop-blur-[10px] ${mode === 'dark' ? 'bg-[#1affa083]' : 'bg-[#0757b890]'} rounded-lg py-10 px-16 space-y-7 gap-[50px]`}
+                className={`fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 backdrop-blur-[10px] ${mode === 'dark' ? 'bg-[#1affa083]' : 'bg-[#0757b890]'} rounded-lg py-10 px-16 space-y-7 gap-[50px]`}
                 initial={{ opacity: 0, scale: 0, x: '-50%', y: '-50%' }}
                 animate={{ opacity: 1, scale: 1 }}>
                     {navigationLink.map((item, index) => (
