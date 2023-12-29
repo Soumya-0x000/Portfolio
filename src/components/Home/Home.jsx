@@ -43,7 +43,7 @@ const Home = () => {
     const text = 'Myself Soumya, who loves to Code and Design.'
 
     return (
-        <div className='overflow-hidden'>
+        <>
             <StarsCanvas/>
             <div className={`${mode === 'dark' ? 'bg-darkSlat text-lighter' : 'cont'} text- relative pt-[30px] lg:pt-0 `}>
                 {/* Main */}
@@ -106,7 +106,7 @@ const Home = () => {
                     <img src={bulb} className='w-full'/>            
                 </motion.div>            
             </div>
-        </div>
+        </>
     )
 }
 
