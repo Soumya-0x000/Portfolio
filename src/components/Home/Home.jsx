@@ -44,10 +44,10 @@ const Home = () => {
 
     return (
         <>
-            <StarsCanvas/>
-            <div className={`${mode === 'dark' ? 'bg-darkSlat text-lighter' : 'cont'} text- relative pt-[30px] lg:pt-0 `}>
+            <div className={`${mode === 'dark' ? 'bg-darkSlate text-lighter' : 'cont'} relative pt-[30px] lg:pt-0 `}>
+                <StarsCanvas/>
                 {/* Main */}
-                <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen '>
+                <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen z-20'>
                     {/* TiltImg Image */}
                     <Tilt className=''>
                         <div className={`max-w-[350px] xl:max-w-[900px] min-w-[200px] sm:min-w-[400px] 2xl:min-w-[532px] lg:min-w-[450px] xl:min-w-[500px] 3xl:min-w-[600px] 3xl:min-h-[600px] rounded-full overflow-hidden p- box`}>
@@ -56,7 +56,7 @@ const Home = () => {
                     </Tilt>
 
                     {/* Description */}
-                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 mb-5 '>
+                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 mb-5 z-10'>
                         <motion.div 
                         className='pb-1 text-[28px] sm:text-5xl xl:text-6xl mt-6 md:mt-0 font-bold flex items-center justify-center lg:justify-start flex-wrap 2xl:pr-20'
                         variants={animateHeading}
