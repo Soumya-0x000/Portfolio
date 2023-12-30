@@ -3,9 +3,9 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import ModeSwitch from './Modes/ModeSwitch'
 import AnimateText from '../../../helpingComponents/animate/AnimateText'
 import { motion } from 'framer-motion'
-import { IoHomeOutline } from "react-icons/io5";
-import { GoProjectSymlink } from "react-icons/go";
-import { MdOutlineArticle } from "react-icons/md";
+import { IoHomeOutline } from "react-icons/io5"
+import { GoProjectSymlink } from "react-icons/go"
+import { MdOutlineArticle } from "react-icons/md"
 import { FaRegAddressCard } from "react-icons/fa"
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
@@ -65,7 +65,11 @@ const Navbar = () => {
         className={`flex items-center justify-between w-full px-1 2xl:px-32 py-3 relative  ${
             mode === 'dark' ? 'bg-darkBlue text-light border-b border-b-blue-400' : 'border-b-lighter'
         } z-10`}>
-            <div className=' w-full flex items-center justify-between px-3'>
+            <motion.div 
+            className=' w-full flex items-center justify-between px-3'
+            initial={{ y: -100 }}
+            animate={{ y: 0, transition: { staggerChildren: 0.2, duration: 1 } }}
+            >
                 {collapseNav ? (
                     <div className={`flex items-center justify-center flex-col gap-y-1 rounded-full ${mode === 'dark' ? 'bg-blue-800' : 'bg-blue-900'} w-10 h-[38px] transition-all cursor-pointer`}
                     onClick={() => setShowNavOption(!showNavOption)}>
@@ -74,9 +78,14 @@ const Navbar = () => {
                         <div className={`w-6 h-[2px] bg-blue-300 ${showNavOption ? '-rotate-45 -translate-y-[3px]' : 'rotate-0'}  transition-all`}></div>
                     </div> 
                 ) : (
-                    <div className='flex gap-x-10 text-[17px]'>
+                    <div 
+                    className='flex gap-x-10 text-[17px]'
+                    initial={{y: -100}}
+                    animate={{y: 0, transition: {staggerChildren: 2, duration: 2}}}>
                         {navigationLink.map((item, index) => (
-                            <div 
+                            <motion.div
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.1 } }} 
                             className='flex flex-col' 
                             key={index}>
                                 <span 
@@ -87,7 +96,7 @@ const Navbar = () => {
                                     {item.title}
                                     <span className={`${mode === 'dark' ? 'bg-white' : 'bg-black '} absolute h-[1px] -bottom-0.5 left-0 ${location.pathname === item.link || navActive[index] ? 'w-full' : 'w-0'} transition-[width] ease-linear duration-300 `}>&nbsp;</span>
                                 </span>
-                            </div>
+                            </motion.div>
                         ))}
                     </div>
                 )}
@@ -97,7 +106,7 @@ const Navbar = () => {
                 <div className='hidden sm:block' onClick={() => navigate(`/`)}>
                     <AnimateText mainText={btnText}/>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Mobile nav option */}
             {showNavOption && (

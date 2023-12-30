@@ -43,10 +43,25 @@ export default {
                         transform: "translate(0, 0)",
                     },
                 },
+                'infiniteSlider': {
+                    "0%": { transform: "translateX(0)" },
+                    "100%": {
+                        transform: "translateX(calc(-250px * 5))",
+                    },
+                },
+                'infiniteSlider-rev': {
+                    "0%": { transform: "translateX(calc(250px * 5))" },
+                    "100%": {
+                        transform: "translateX(0)",
+                    },
+                },
             },
             dropShadow: {
                 'mdDark': '10px 10px 0px rgba(158, 228, 255, 0.95)',
                 'mdLight': '10px 10px 0px rgba(35, 195, 255, 0.95)',
+            },
+            boxShadow: {
+                '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
             }
         },
     },

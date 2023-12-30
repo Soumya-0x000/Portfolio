@@ -7,7 +7,7 @@ import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import HireMe from './hireMe/HireMe'
 import Tilt from 'react-parallax-tilt';
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
-import './home.css'
+import './borderAnimation.css'
 import { CardSpotlight } from '../../helpingComponents/CardSpotlight/CardSpotlight'
 import StarsCanvas from '../../helpingComponents/animate/StarCanvas'
 
@@ -50,7 +50,7 @@ const Home = () => {
                 <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen z-20'>
                     {/* TiltImg Image */}
                     <Tilt className=''>
-                        <div className={`max-w-[350px] xl:max-w-[900px] min-w-[200px] sm:min-w-[400px] 2xl:min-w-[532px] lg:min-w-[450px] xl:min-w-[500px] 3xl:min-w-[600px] 3xl:min-h-[600px] rounded-full overflow-hidden p- box`}>
+                        <div className={`max-w-[350px] xl:max-w-[900px] min-w-[200px] sm:min-w-[400px] 2xl:min-w-[532px] lg:min-w-[450px] xl:min-w-[500px] 3xl:min-w-[600px] 3xl:min-h-[600px] rounded-full overflow-hidden box`}>
                             <img src={mySelf} className={`w-full h-full rounded-full ${mode === 'dark' ? 'border border-darkBlue' : ''}`} />
                         </div>
                     </Tilt>

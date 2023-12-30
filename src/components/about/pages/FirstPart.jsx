@@ -23,6 +23,7 @@ const FirstPart = () => {
     const {mode} = useTheme()
     const refElement = useRef()
     const isInView = useInView(refElement)
+    const [scrWidth, setScrWidth] = useState(window.innerWidth)
 
     const longBiography = [
         `Meet Soumya Sankar Das`,
@@ -46,6 +47,7 @@ const FirstPart = () => {
     useEffect(() => {
         const handleBiography = () => {
             const widthScr = window.innerWidth
+            setScrWidth(widthScr)
             if (widthScr >= 970) {
                 setBiography(longBiography)
             } else {
@@ -98,24 +100,24 @@ const FirstPart = () => {
                     <>     
                         <motion.div 
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
-                        initial={{x: 100}}
-                        animate={{x: 0, transition: {duration: .3}}}>
+                        initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
+                        animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
                             <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={16} />+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Projects completed</div>
                         </motion.div>
 
                         <motion.div 
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
-                        initial={{x: 100}}
-                        animate={{x: 0, transition: {duration: .3}}}>
+                        initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
+                        animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
                             <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={3}/></div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Large Project completed</div>
                         </motion.div>
 
                         <motion.div 
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
-                        initial={{x: 100}}
-                        animate={{x: 0, transition: {duration: .3}}}>
+                        initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
+                        animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
                             <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.3} decimals={1}/>+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Years of Experience</div>
                         </motion.div>
