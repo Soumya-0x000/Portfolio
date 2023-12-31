@@ -13,7 +13,7 @@ const navigationLink = [
     {link: '/', icon: <IoHomeOutline/>, title: 'Home'},
     {link: '/about', icon: <FaRegAddressCard/>, title: 'About'},
     {link: '/projects', icon: <GoProjectSymlink/>, title: 'Projects'},
-    {link: '/articles', icon: <MdOutlineArticle/>, title: 'Articles'},
+    {link: '/education', icon: <MdOutlineArticle/>, title: 'Education'},
 ]
 
 const Navbar = () => {

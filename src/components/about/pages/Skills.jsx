@@ -1,18 +1,18 @@
 import React, { useEffect, useRef, useState } from 'react'
-import html from '../../../../assets/skills/html.svg'
-import css from '../../../../assets/skills/css.svg'
-import js from '../../../../assets/skills/js.svg'
-import redux from '../../../../assets/skills/redux.svg'
-import react from '../../../../assets/skills/react.png'
-import framer from '../../../../assets/skills/framer-motion.svg'
-import Firebase from '../../../../assets/skills/firebase.svg'
-import mui from '../../../../assets/skills/material-ui.png'
-import tailwind from '../../../../assets/skills/tailwind-css.svg'
-import sass from '../../../../assets/skills/sass.svg'
-import git from '../../../../assets/skills/git.svg'
-import github from '../../../../assets/skills/github.svg'
+import html from '../../../assets/skills/html.svg'
+import css from '../../../assets/skills/css.svg'
+import js from '../../../assets/skills/js.svg'
+import redux from '../../../assets/skills/redux.svg'
+import react from '../../../assets/skills/react.png'
+import framer from '../../../assets/skills/framer-motion.svg'
+import Firebase from '../../../assets/skills/firebase.svg'
+import mui from '../../../assets/skills/material-ui.png'
+import tailwind from '../../../assets/skills/tailwind-css.svg'
+import sass from '../../../assets/skills/sass.svg'
+import git from '../../../assets/skills/git.svg'
+import github from '../../../assets/skills/github.svg'
 import { motion } from 'framer-motion'
-import { useTheme } from '../../../../helpingComponents/hook/ThemeContext'
+import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const shuffle = (array) => {
     let currentIndex = array.length,
@@ -46,8 +46,8 @@ const squareData = [
     {id: 12, name: 'GitHub', src: github, shadow: 'shadow-slate-400', border: 'border-slate-400'},
 ];
   
-
 const generateSquares = (mode) => {
+    // console.log(mode);
     return (
         shuffle(squareData).map((sq) => (
             <motion.div
@@ -56,16 +56,15 @@ const generateSquares = (mode) => {
             transition={{ duration: 1.5, type: "spring" }}
             className={`w-[70px] sm:w-[80px] lg:w-[95px] 2xl:w-[110px] h-[70px] sm:h-[80px] lg:h-[95px] 2xl:h-[110px] rounded-full bg-center object-cover object-center p-[2px] cursor-pointer shadow-lg ${sq.shadow} mx-auto `}
             >
-                <div className={`bg-slate p-2 rounded-full h-full w-full flex items-center justify-center overflow-hidden hover:bg-slate-800 transition-all`}>
+                <div className={`bg-slate p-2 rounded-full h-full w-full flex items-center justify-center overflow-hidden ${mode === 'dark' ? 'hover:bg-slate-800' : 'hover:bg-slate-200'} transition-all`}>
                     <img src={sq.src} className='w-full h-full'/>
                 </div>
             </motion.div>
         ))
     );
 };
-
-const ShuffleGrid = () => {
-    const {mode} = useTheme()
+    
+const ShuffleGrid = ({mode}) => {
     const timeoutRef = useRef(null);
     const [squares, setSquares] = useState(generateSquares(mode));
 
@@ -96,14 +95,14 @@ const Skills = () => {
             <span className='flex items-center justify-center bo rounded-full'>
                 <motion.span 
                 className={`px-6 md:px-7 xl:px-9 py-1 md:py-2 xl:py-3 text-lg sm:text-xl lg:text-[25px] font-semibold rounded-full ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-300'}`}
-                initial={{y: -1000, scale: 0}}
+                initial={{y: -400, scale: 0}}
                 animate={{y: 0, scale: 1}}
                 >
                     <span className={`bg-gradient-to-br ${mode === 'dark' ? 'from-rose-300 via-indigo-300 to-green-300' : 'from-rose-400 via-indigo-500 to-green-500'} bg-clip-text text-transparent`}>I'm proficient💫 in</span>
                 </motion.span>
             </span>
 
-            <ShuffleGrid />
+            <ShuffleGrid mode={mode} />
         </div>
     )
 }

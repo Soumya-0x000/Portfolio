@@ -6,8 +6,7 @@ import SocialMEdiaIcon from '../src/components/static/SocialMEdiaIcon/SocialMEdi
 import { ThemeProvider, useTheme } from './helpingComponents/hook/ThemeContext'
 import About from './components/about/About'
 import Projects from './components/projects/Projects'
-import Articles from './components/articles/Articles'
-import StarsCanvas from './helpingComponents/animate/StarCanvas'
+import Education from './components/Education/Education'
 
 function App() {
     const {mode} = useTheme()
@@ -22,7 +21,7 @@ function App() {
                     <Route path='/' element={<Home/>} />
                     <Route path='/about' element={<About/>} />
                     <Route path='/projects' element={<Projects/>} />
-                    <Route path='/articles' element={<Articles/>} />
+                    <Route path='/education' element={<Education/>} />
                 </Routes>
                 <Footer/>
             </ThemeProvider>

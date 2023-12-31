@@ -33,6 +33,7 @@ export default {
             animation: {
                 'spin-slow': 'spin 8s linear infinite',
                 "text-reveal": "text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s",
+                "infinite-slider": "infiniteSlider 20s linear infinite",
             },
             keyframes: {
                 "text-reveal": {
@@ -49,12 +50,6 @@ export default {
                         transform: "translateX(calc(-250px * 5))",
                     },
                 },
-                'infiniteSlider-rev': {
-                    "0%": { transform: "translateX(calc(250px * 5))" },
-                    "100%": {
-                        transform: "translateX(0)",
-                    },
-                },
             },
             dropShadow: {
                 'mdDark': '10px 10px 0px rgba(158, 228, 255, 0.95)',
@@ -67,4 +62,3 @@ export default {
     },
     plugins: [],
 }
-
