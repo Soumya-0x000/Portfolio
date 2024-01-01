@@ -11,9 +11,9 @@ import generatePswd from '../../assets/project/pswdGenerate.png'
 import { TextReveal } from '../../helpingComponents/textReveal/TextReveal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faArrowUpRightFromSquare, faL } from '@fortawesome/free-solid-svg-icons'
-import { MdOutlineFlip } from "react-icons/md";
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { CgDetailsMore } from "react-icons/cg"
+import { motion } from 'framer-motion'
 
 const projectLogos = [
     {
@@ -66,16 +66,30 @@ const projectLogos = [
     },
 ]
 
+const staggerVariants = {
+    initial: {},
+    animate: {
+        transition: {
+            staggerChildren: 0.15,
+        },
+    },
+};
+  
+const childVariants = {
+    initial: { opacity: 0, y: 200 },
+    animate: { opacity: 1, y: 0 },
+};
+
 const Projects = () => {
     const {mode} = useTheme()
     const [showLiveLink, setShowLiveLink] = useState(Array(projectLogos.length).fill(false))
     const [showDetails, setShowDetails] = useState(Array(projectLogos.length).fill(false))
-    const [scrWidth, setScrWidth] = useState(window.innerWidth >= 460)
+    const scrWidthLimit = 450
+    const [scrWidth, setScrWidth] = useState(window.innerWidth >= scrWidthLimit)
        
     useLayoutEffect(() => {
         const handleScrWidthEvent = () => {
-            const widthScr = window.innerWidth;
-            setScrWidth(widthScr >= 460);
+            setScrWidth(window.innerWidth >= scrWidthLimit);
         };
     
         handleScrWidthEvent();
@@ -132,17 +146,21 @@ const Projects = () => {
     }
 
     return (
-        <div className={`${mode === 'dark' ? 'bg-darkSlate text-light' : ''} px-5 md:px-3 min-h-screen`}>
+        <div className={`${mode === 'dark' ? 'text-light' : ''} px-5 md:px-3 min-h-screen pt-[130px] sm:pt-[60px]`}>
             <div className={`text-center text-[25px] sm:text-5xl md:text-[55px] lg:text-[73px] font-extrabold 2xl:text-8xl pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20`}>
                 <TextReveal child={`Projects I've completed!`}/>
             </div>
 
             <div className='mt-10 pb-16'>
-                <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4  gap-y-[50px] gap-x-[20px]'>
+                <motion.div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4  gap-y-[50px] gap-x-[20px]'
+                variants={staggerVariants}
+                initial='initial'
+                animate='animate'>
                     {projectLogos.map((item, index) => (
-                        <div 
+                        <motion.div 
                         className={`flex flex-col items-center justify-between ${mode === 'dark' ? 'bg-slate-700' : 'bg-slate-300'} cursor-pointer p-3 rounded-xl overflow-hidden`} 
                         key={index}
+                        variants={childVariants}
                         onMouseEnter={() => handleShowLink(index)}
                         onMouseLeave={() => handleHideLink(index)}>
                             {/* Image, take look, details */}
@@ -167,12 +185,10 @@ const Projects = () => {
                                 </a>
 
                                 {/* Details */}
-                                <div className={` py-[1rem] absolute ${showDetails[index] ? 'bottom-0' : 'bottom-[100%]'} 
-                                    left-0 right-0 h-fit bg-gradient-to-tr 
-                                    ${mode === 'dark' ? 'from-[#5fffac] to-blue-300 text-[#216538]' : 'from-[#7c2497] to-blue-600 text-[#92ffe2]'} -translate-y- transition-all flex flex-col items-center justify-start gap-y-2`}>
-                                    <span className='text-[19px] font-bold'>
-                                        Used Technologies
-                                    </span>
+                                <div 
+                                className={` py-[.3rem] absolute ${showDetails[index] ? 'bottom-0' : 'bottom-[100%]'} left-0 right-0 h-fit 
+                                bg-gradient-to-tr ${mode === 'dark' ? 'from-[#5fffac] to-blue-300 text-[#216538]' : 'from-[#7c2497] to-blue-600 text-[#92ffe2]'} transition-all flex flex-col items-center justify-start gap-y-2`}>
+                                    <span className='text-[19px] font-bold'>Used Technologies</span>
                                     {detailsSec(item.usedTech)}
                                 </div>
                             </div>
@@ -195,9 +211,9 @@ const Projects = () => {
                                 </div>
                                 <div className='text-[13px] lsm:text-[15px] sm:text-[14px] font-bold tracking-wide'>{item.name}</div>
                             </div>
-                        </div>
+                        </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </div>
         </div>
     )

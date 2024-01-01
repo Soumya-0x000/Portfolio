@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import circularTextDark from '../../../assets/circularTextWithoutBGBlack.png';
 import circularTextLight from '../../../assets/circularTextWithoutBGWhite.png'
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
-import { faL } from '@fortawesome/free-solid-svg-icons';
+import { motion } from 'framer-motion';
 
 const HireMe = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
@@ -26,7 +26,11 @@ const HireMe = () => {
         : { bottom: 0, left: 0 };
 
     return (
-        <span className='fixed items-center justify-center overflow-hidden z-10' style={positionStyles}>
+        <motion.span 
+        initial={{y: -1000, opacity: 0}}
+        animate={{y: 0, opacity: 1, transition:{duration: .6}}}
+        className='fixed items-center justify-center overflow-hidden z-10' 
+        style={positionStyles}>
             <span className='w-24 sm:w-32 lg:w-[186px] h-auto flex items-center justify-center relative'>
                 <img src={mode === 'dark' ? circularTextLight : circularTextDark} className='w-full h-full animate-spin-slow fill-black' />
                 <a 
@@ -38,7 +42,7 @@ const HireMe = () => {
                     <span className='z-10 absolute w-full flex items-center justify-center rounded-full left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2'>Hire Me</span>
                 </a>
             </span>
-        </span>
+        </motion.span>
     );
 };
 

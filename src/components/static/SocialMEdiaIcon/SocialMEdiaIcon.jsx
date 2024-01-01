@@ -19,7 +19,7 @@ const SocialMEdiaIcon = () => {
 
     return (
         <span className='flex items-center justify-center py-5 2xl:py-0 fixed -bottom-2 right-1/2 2xl:right-8 translate-x-1/2 2xl:top-1/2 2xl:-translate-y-1/2 z-50'>
-            <span className={`flex items-center justify-between gap-x-9 ring-2 ${mode === 'dark' ? '' : 'bg-[#48ffc846]'} ring-green-400 2xl:flex-col backdrop-blur-[5px] z-20 2xl:px-2 2xl:py-7 2xl:gap-y-9 rounded-full w-fit px-6 py-1 `}>
+            <span className={`flex items-center justify-between gap-x-9 ring-2 ${mode === 'dark' ? 'bg-[#00000085]' : 'bg-[#48ffc846]'} ring-green-400 2xl:flex-col backdrop-blur-[5px] z-20 2xl:px-2 2xl:py-7 2xl:gap-y-9 rounded-full w-fit px-6 py-1 `}>
                 {iconLinks.map((item, index) => (
                     <a href={item.link} target='_blank' key={index}>
                         <motion.span 

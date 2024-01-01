@@ -81,7 +81,7 @@ const ShuffleGrid = ({mode}) => {
     };
 
     return (
-        <div className="w-full grid grid-cols-3 sm:grid-cols-4 2xl:grid-cols-6 gap-y-6 lg:gap-y-[4rem] gap-x-5">
+        <div className="w-full grid grid-cols-3 sm:grid-cols-4 2xl:grid-cols-6 gap-y-6 lg:gap-y-[4rem] gap-x-5 z-40">
             {squares.map((sq) => sq)}
         </div>
     );
@@ -95,10 +95,10 @@ const Skills = () => {
             <span className='flex items-center justify-center bo rounded-full'>
                 <motion.span 
                 className={`px-6 md:px-7 xl:px-9 py-1 md:py-2 xl:py-3 text-lg sm:text-xl lg:text-[25px] font-semibold rounded-full ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-300'}`}
-                initial={{y: -400, scale: 0}}
-                animate={{y: 0, scale: 1}}
+                initial={{y: 400, scale: 1}}
+                animate={{y: 0, scale: 1, transition:{duration: .5}}}
                 >
-                    <span className={`bg-gradient-to-br ${mode === 'dark' ? 'from-rose-300 via-indigo-300 to-green-300' : 'from-rose-400 via-indigo-500 to-green-500'} bg-clip-text text-transparent`}>I'm proficient💫 in</span>
+                    <span className={`bg-gradient-to-br ${mode === 'dark' ? 'from-rose-300 via-indigo-300 to-green-300' : 'from-rose-400 via-indigo-500 to-green-500'} bg-clip-text text-transparent z-40`}>I'm proficient💫 in</span>
                 </motion.span>
             </span>
 

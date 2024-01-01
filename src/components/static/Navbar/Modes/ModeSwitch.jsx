@@ -11,7 +11,7 @@ const ModeSwitch = () => {
     return (
         <div
         className={`flex items-center justify-center rounded-full transition-colors ${
-            mode === "light" ? "bg-green-200" : "bg-slate-700"
+            mode === "light" ? "bg-green-200  ring-[1px] ring-violet-500" : "bg-slate-700"
         } h-fit`}>
             <SliderToggle mode={mode} toggleMode={toggleMode} />
         </div>

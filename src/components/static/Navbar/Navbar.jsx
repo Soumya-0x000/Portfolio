@@ -10,10 +10,10 @@ import { FaRegAddressCard } from "react-icons/fa"
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const navigationLink = [
-    {link: '/', icon: <IoHomeOutline/>, title: 'Home'},
-    {link: '/about', icon: <FaRegAddressCard/>, title: 'About'},
-    {link: '/projects', icon: <GoProjectSymlink/>, title: 'Projects'},
-    {link: '/education', icon: <MdOutlineArticle/>, title: 'Education'},
+    {link: '/', icon: <IoHomeOutline/>, title: 'Home', onHoverLight: 'hover:text-yellow-600', onHoverDark: 'hover:text-yellow-200', undrlnBGLight: 'bg-yellow-700', undrlnBGDark: 'bg-yellow-200'},
+    {link: '/about', icon: <FaRegAddressCard/>, title: 'About', onHoverLight: 'hover:text-cyan-600', onHoverDark: 'hover:text-cyan-300', undrlnBGLight: 'bg-cyan-700', undrlnBGDark: 'bg-cyan-300'},
+    {link: '/projects', icon: <GoProjectSymlink/>, title: 'Projects', onHoverLight: 'hover:text-rose-600', onHoverDark: 'hover:text-rose-300', undrlnBGLight: 'bg-rose-700', undrlnBGDark: 'bg-rose-300'},
+    {link: '/education', icon: <MdOutlineArticle/>, title: 'Education', onHoverLight: 'hover:text-green-600', onHoverDark: 'hover:text-green-300', undrlnBGLight: 'bg-green-700', undrlnBGDark: 'bg-green-300'},
 ]
 
 const Navbar = () => {
@@ -22,19 +22,42 @@ const Navbar = () => {
     const [showNavOption, setShowNavOption] = useState(false)
     const [btnText, setBtnTxt] = useState(window.innerWidth <= 1024 ? 'PORTFOLIO' : 'SSD PORTFOLIO')
     const [navActive, setNavActive] = useState(Array(navigationLink.length).fill(false))
+    const [isUnderlineActive, setIsUnderlineActive] = useState(Array(navigationLink.length).fill(false))
     const location = useLocation()
     const {mode} = useTheme()
 
     const handleMouseEnter = (index) => {
         const updatedNavActive = [...navActive]
+        const updatedUnderlineColor = [...isUnderlineActive]
         updatedNavActive[index] = true
+        updatedUnderlineColor[index] = true
         setNavActive(updatedNavActive)
+        setIsUnderlineActive(updatedUnderlineColor)
     }
 
     const handleMouseLeave = (index) => {
         const updatedNavActive = [...navActive]
+        const updatedUnderlineColor = [...isUnderlineActive]
         updatedNavActive[index] = false
+        updatedUnderlineColor[index] = false
         setNavActive(updatedNavActive)
+        setIsUnderlineActive(updatedUnderlineColor)
+    }
+
+    const underlineColor = (id) => {
+        if (mode === 'dark') {
+            if (isUnderlineActive[id]) {
+                return navigationLink[id].undrlnBGDark
+            } else {
+                return 'bg-violet-300'
+            }
+        } else {
+            if (isUnderlineActive[id]) {
+                return navigationLink[id].undrlnBGLight
+            } else {
+                return 'bg-violet-800'
+            }
+        }
     }
 
     useLayoutEffect(() => {
@@ -60,11 +83,18 @@ const Navbar = () => {
         }
     }, [])
 
+    const handleScrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        })
+    }
+
     return (
         <div 
-        className={`flex items-center justify-between w-full px-1 2xl:px-32 py-3 relative  ${
-            mode === 'dark' ? 'bg-darkBlue text-light border-b border-b-blue-400' : 'border-b-lighter'
-        } z-10`}>
+        className={`flex items-center justify-between w-full px-1 2xl:px-32 py-3 ${
+            mode === 'dark' ? 'bg-darkBlue text-light border-b border-b-blue-400' : 'border-b-lighter bg-violet-100'
+        } z-50 fixed`}>
             <motion.div 
             className=' w-full flex items-center justify-between px-3'
             initial={{ y: -100 }}
@@ -86,15 +116,23 @@ const Navbar = () => {
                             <motion.div
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0, transition: { duration: 0.5, delay: index * 0.1 } }} 
-                            className='flex flex-col' 
+                            className='flex flex-col'
                             key={index}>
                                 <span 
-                                className='cursor-pointer relative ' 
+                                className={`cursor-pointer relative`} 
                                 onClick={() => navigate(item.link)}
                                 onMouseEnter={() => handleMouseEnter(index)}
                                 onMouseLeave={() => handleMouseLeave(index)}>
-                                    {item.title}
-                                    <span className={`${mode === 'dark' ? 'bg-white' : 'bg-black '} absolute h-[1px] -bottom-0.5 left-0 ${location.pathname === item.link || navActive[index] ? 'w-full' : 'w-0'} transition-[width] ease-linear duration-300 `}>&nbsp;</span>
+                                    <span className={`flex items-center justify-center gap-x-2 ${mode === 'dark' ? `text-violet-300 ${item.onHoverDark}` : `text-violet-800 ${item.onHoverLight}`}`}>
+                                        <span className='text-lg'>
+                                            {item.icon}
+                                        </span>
+                                        <span className='text-lg'>
+                                            {item.title}
+                                        </span>
+                                    </span>
+
+                                    <span className={`${underlineColor(index)} absolute h-[1px] -bottom-0.5 left-0 ${location.pathname === item.link || navActive[index] ? 'w-full' : 'w-0'} transition-[width] ease-linear duration-300 `}>&nbsp;</span>
                                 </span>
                             </motion.div>
                         ))}
@@ -103,9 +141,9 @@ const Navbar = () => {
 
                 <ModeSwitch/>
                 
-                <div className='hidden sm:block' onClick={() => navigate(`/`)}>
+                <button className='hidden sm:block' onClick={() => navigate(`/`)}>
                     <AnimateText mainText={btnText}/>
-                </div>
+                </button>
             </motion.div>
 
             {/* Mobile nav option */}

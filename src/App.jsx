@@ -7,6 +7,7 @@ import { ThemeProvider, useTheme } from './helpingComponents/hook/ThemeContext'
 import About from './components/about/About'
 import Projects from './components/projects/Projects'
 import Education from './components/Education/Education'
+import StarsCanvas from './helpingComponents/animate/StarCanvas'
 
 function App() {
     const {mode} = useTheme()
@@ -14,15 +15,19 @@ function App() {
     return (
         <BrowserRouter>
             <ThemeProvider>
-                {/* <StarsCanvas/> */}
                 <SocialMEdiaIcon/>
                 <Navbar/>
+                <StarsCanvas/>
                 <Routes>
                     <Route path='/' element={<Home/>} />
                     <Route path='/about' element={<About/>} />
                     <Route path='/projects' element={<Projects/>} />
                     <Route path='/education' element={<Education/>} />
                 </Routes>
+                {/* <Home/>
+                <About/>
+                <Projects/>
+                <Education/> */}
                 <Footer/>
             </ThemeProvider>
         </BrowserRouter>

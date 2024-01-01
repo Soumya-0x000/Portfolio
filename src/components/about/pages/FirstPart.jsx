@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import myself from '../../../assets/071ba5eb-4186-4b4f-9bd7-ad8352fbcecc.jpeg'
 import CountUp from 'react-countup'
 import { motion, useInView } from 'framer-motion'
@@ -44,7 +44,7 @@ const FirstPart = () => {
             : shortBiography
     )
     
-    useEffect(() => {
+    useLayoutEffect(() => {
         const handleBiography = () => {
             const widthScr = window.innerWidth
             setScrWidth(widthScr)

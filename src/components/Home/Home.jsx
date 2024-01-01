@@ -44,19 +44,24 @@ const Home = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'bg-darkSlate text-lighter' : 'cont'} relative pt-[30px] lg:pt-0 `}>
+            <div className={`${mode === 'dark' ? 'text-lighter' : 'cont'} relative pt-[130px] sm:pt-[60px]`}>
                 <StarsCanvas/>
                 {/* Main */}
-                <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen z-20'>
+                <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen'>
                     {/* TiltImg Image */}
-                    <Tilt className=''>
-                        <div className={`max-w-[350px] xl:max-w-[900px] min-w-[200px] sm:min-w-[400px] 2xl:min-w-[532px] lg:min-w-[450px] xl:min-w-[500px] 3xl:min-w-[600px] 3xl:min-h-[600px] rounded-full overflow-hidden box`}>
-                            <img src={mySelf} className={`w-full h-full rounded-full ${mode === 'dark' ? 'border border-darkBlue' : ''}`} />
-                        </div>
-                    </Tilt>
+                    <motion.div 
+                    initial={{y: -400, opacity: 0}}
+                    animate={{y: 0, opacity: 1, transition:{duration: .5}}}
+                    >
+                        <Tilt className=''>
+                            <div className={`max-w-[350px] xl:max-w-[900px] min-w-[200px] sm:min-w-[400px] 2xl:min-w-[532px] lg:min-w-[450px] xl:min-w-[500px] 3xl:min-w-[600px] 3xl:min-h-[600px] rounded-full overflow-hidden box`}>
+                                <img src={mySelf} className={`w-full h-full rounded-full ${mode === 'dark' ? 'border border-darkBlue' : ''}`} />
+                            </div>
+                        </Tilt>
+                    </motion.div>
 
                     {/* Description */}
-                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 mb-5 z-10'>
+                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 mb-5'>
                         <motion.div 
                         className='pb-1 text-[28px] sm:text-5xl xl:text-6xl mt-6 md:mt-0 font-bold flex items-center justify-center lg:justify-start flex-wrap 2xl:pr-20'
                         variants={animateHeading}
@@ -72,9 +77,13 @@ const Home = () => {
                             ))}
                         </motion.div>
                         
-                        <div className='text-[11.5px] sm:text-[15px] lg:text-lg text-justify lg:text-start w-full'>
+                        <motion.div 
+                        className='text-[11.5px] sm:text-[15px] lg:text-lg text-justify lg:text-start w-full'
+                        initial={{y: 400}}
+                        animate={{y: 0, transition:{duration: .5}}}
+                        >
                             As a skilled frontend developer, I am dedicated to turning ideas into innovative web applications. Explore my latest projects and articles, showcasing my expertise in React.js and web development.
-                        </div>
+                        </motion.div>
                                 
                         {/* Resume, contact */}
                         <div className='flex items-center gap-x-6'>

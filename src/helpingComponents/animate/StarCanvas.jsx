@@ -33,7 +33,7 @@ const StarBackground = (props) => {
 const StarsCanvas = () => {
     const {mode} = useTheme()
     return (
-        <div className={`w-full h-auto fixed inset-0 ${mode === 'dark' ? 'bg-slate-900' : ''}`}>
+        <div className={`-z-20 w-full h-auto fixed inset-0 ${mode === 'dark' ? 'bg-slate-900' : ''}`}>
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <Suspense fallback={null}>
                     {mode === 'dark' ? (
