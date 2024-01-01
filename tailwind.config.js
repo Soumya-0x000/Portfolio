@@ -20,6 +20,7 @@ export default {
                 k2d: ['K2D', 'sans-serif']
             },
             screens: {
+                'lsm': '460px',
                 'xxl': '1400px',
                 '3xl': '1600px',
                 '4xl': '1670px'
