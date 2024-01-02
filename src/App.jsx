@@ -8,6 +8,7 @@ import About from './components/about/About'
 import Projects from './components/projects/Projects'
 import Education from './components/Education/Education'
 import StarsCanvas from './helpingComponents/animate/StarCanvas'
+import FAQ from './components/faq/FAQ'
 
 function App() {
     const {mode} = useTheme()
@@ -23,6 +24,7 @@ function App() {
                     <Route path='/about' element={<About/>} />
                     <Route path='/projects' element={<Projects/>} />
                     <Route path='/education' element={<Education/>} />
+                    <Route path='/faq' element={<FAQ/>} />
                 </Routes>
                 {/* <Home/>
                 <About/>

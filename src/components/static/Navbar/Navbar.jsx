@@ -7,6 +7,7 @@ import { IoHomeOutline } from "react-icons/io5"
 import { GoProjectSymlink } from "react-icons/go"
 import { MdOutlineArticle } from "react-icons/md"
 import { FaRegAddressCard } from "react-icons/fa"
+import { TfiThought } from "react-icons/tfi";
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const navigationLink = [
@@ -14,6 +15,7 @@ const navigationLink = [
     {link: '/about', icon: <FaRegAddressCard/>, title: 'About', onHoverLight: 'hover:text-cyan-600', onHoverDark: 'hover:text-cyan-300', undrlnBGLight: 'bg-cyan-700', undrlnBGDark: 'bg-cyan-300'},
     {link: '/projects', icon: <GoProjectSymlink/>, title: 'Projects', onHoverLight: 'hover:text-rose-600', onHoverDark: 'hover:text-rose-300', undrlnBGLight: 'bg-rose-700', undrlnBGDark: 'bg-rose-300'},
     {link: '/education', icon: <MdOutlineArticle/>, title: 'Education', onHoverLight: 'hover:text-green-600', onHoverDark: 'hover:text-green-300', undrlnBGLight: 'bg-green-700', undrlnBGDark: 'bg-green-300'},
+    {link: '/faq', icon: <TfiThought />, title: 'FAQ', onHoverLight: 'hover:text-blue-600', onHoverDark: 'hover:text-blue-300', undrlnBGLight: 'bg-blue-700', undrlnBGDark: 'bg-blue-300'},
 ]
 
 const Navbar = () => {
@@ -92,14 +94,13 @@ const Navbar = () => {
 
     return (
         <div 
-        className={`flex items-center justify-between w-full px-1 2xl:px-32 py-3 ${
+        className={`flex items-center justify-between w-full px-1 2xl:px-28 py-3 ${
             mode === 'dark' ? 'bg-darkBlue text-light border-b border-b-blue-400' : 'border-b-lighter bg-violet-100'
         } z-50 fixed`}>
             <motion.div 
             className=' w-full flex items-center justify-between px-3'
             initial={{ y: -100 }}
-            animate={{ y: 0, transition: { staggerChildren: 0.2, duration: 1 } }}
-            >
+            animate={{ y: 0, transition: { staggerChildren: 0.2, duration: 1 } }}>
                 {collapseNav ? (
                     <div className={`flex items-center justify-center flex-col gap-y-1 rounded-full ${mode === 'dark' ? 'bg-blue-800' : 'bg-blue-900'} w-10 h-[38px] transition-all cursor-pointer`}
                     onClick={() => setShowNavOption(!showNavOption)}>
@@ -109,7 +110,7 @@ const Navbar = () => {
                     </div> 
                 ) : (
                     <div 
-                    className='flex gap-x-10 text-[17px]'
+                    className='flex gap-x-6 2xl:gap-x-8'
                     initial={{y: -100}}
                     animate={{y: 0, transition: {staggerChildren: 2, duration: 2}}}>
                         {navigationLink.map((item, index) => (
@@ -123,11 +124,11 @@ const Navbar = () => {
                                 onClick={() => navigate(item.link)}
                                 onMouseEnter={() => handleMouseEnter(index)}
                                 onMouseLeave={() => handleMouseLeave(index)}>
-                                    <span className={`flex items-center justify-center gap-x-2 ${mode === 'dark' ? `text-violet-300 ${item.onHoverDark}` : `text-violet-800 ${item.onHoverLight}`}`}>
-                                        <span className='text-lg'>
+                                    <span className={`flex items-center justify-center gap-x-1 ${mode === 'dark' ? `text-violet-300 ${item.onHoverDark}` : `text-violet-800 ${item.onHoverLight}`}`}>
+                                        <span className='text-[18px]'>
                                             {item.icon}
                                         </span>
-                                        <span className='text-lg'>
+                                        <span className=''>
                                             {item.title}
                                         </span>
                                     </span>
@@ -149,13 +150,13 @@ const Navbar = () => {
             {/* Mobile nav option */}
             {showNavOption && (
                 <motion.div 
-                className={`fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 backdrop-blur-[10px] ${mode === 'dark' ? 'bg-[#1affa083]' : 'bg-[#0757b890]'} rounded-lg py-10 px-16 space-y-7 gap-[50px]`}
+                className={`w-fit fixed left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 backdrop-blur-[10px] ${mode === 'dark' ? 'bg-[#1affa083]' : 'bg-[#0757b890]'} rounded-lg py-10 px-4 md:px-3 gap-y-6 gap-x-10 z-20 grid grid-cols-1 sm:grid-cols-2 `}
                 initial={{ opacity: 0, scale: 0, x: '-50%', y: '-50%' }}
                 animate={{ opacity: 1, scale: 1 }}>
                     {navigationLink.map((item, index) => (
                         <div 
-                        className={`
-                            px-4 py-2 rounded-full cursor-pointer flex items-center gap-3 text-[17px]
+                        className={`w-full
+                            pr-5 pl-3 py-2 rounded-full cursor-pointer flex items-center gap-3 text-[17px]
                             shadow-[-5px_-3px_4px_rgba(255,_255,_255,_0.4),_5px_5px_10px_rgba(0,_0,_0,_0.25)]
                             hover:shadow-[-1px_-1px_5px_rgba(255,_255,_255,_0.6),_1px_1px_5px_rgba(0,_0,_0,_0.3),inset_-2px_-2px_5px_rgba(255,_255,_255,_1),inset_2px_2px_4px_rgba(0,_0,_0,_0.3)]
                             transition-all text-slate-800 ${mode === 'dark' ? 'bg-[#bcff6444] hover:text-violet-600' : 'bg-[#8ed2ff64] hover:text-pink-600'}
@@ -165,10 +166,10 @@ const Navbar = () => {
                             setShowNavOption(false)
                         }}
                         key={index}>
-                            {item.icon}
-                            <span 
+                            <span className='flex items-center justify-center gap-x-2'
                             onMouseEnter={() => handleMouseEnter(index)}
                             onMouseLeave={() => handleMouseLeave(index)}>
+                                {item.icon}
                                 {item.title}
                             </span>
                         </div>

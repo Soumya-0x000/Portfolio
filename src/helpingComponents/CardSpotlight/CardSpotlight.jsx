@@ -41,7 +41,7 @@ export const CardSpotlight = ({children, icon}) => {
         onMouseMove={handleMouseMove}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        className={`relative bg-black text-white px-3 md:px-6 py-2 rounded-lg text-md md:text-lg ring-2 ${mode === 'dark' ? 'ring-white' : 'ring-slate-700'} flex items-center justify-center flex-shrink-0 overflow-hidden`}
+        className={`relative  px-3 md:px-6 py-2 rounded-lg text-md md:text-lg ring-[1px] ${mode === 'dark' ? 'ring-white text-light bg-darkSlate' : 'ring-slate-700 bg-[#edfaff]'} flex items-center justify-center flex-shrink-0 overflow-hidden`}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}>
             <div
