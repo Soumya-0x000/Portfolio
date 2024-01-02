@@ -86,7 +86,10 @@ const Home = () => {
                         </motion.div>
                                 
                         {/* Resume, contact */}
-                        <div className='flex items-center gap-x-6'>
+                        <motion.div 
+                        className='flex items-center gap-x-6'
+                        initial={{y: 400}}
+                        animate={{y: 0, transition:{duration: 1}}}>
                             <a href="../../assets/Soumya_Resume.pdf"
                             download={true}>
                                 <CardSpotlight 
@@ -98,7 +101,7 @@ const Home = () => {
                             <a href="mailto:soumyadas429@gmail.com">
                                 <span className={`border-b-2 pb-1 ${mode === 'dark' ? 'border-b-white' : 'border-b-black'} text-xl cursor-pointer`}>Contact</span>
                             </a>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
                 
