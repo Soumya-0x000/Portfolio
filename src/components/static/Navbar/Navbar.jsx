@@ -7,7 +7,7 @@ import { IoHomeOutline } from "react-icons/io5"
 import { GoProjectSymlink } from "react-icons/go"
 import { MdOutlineArticle } from "react-icons/md"
 import { FaRegAddressCard } from "react-icons/fa"
-import { TfiThought } from "react-icons/tfi";
+import { VscFeedback } from "react-icons/vsc";
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
 const navigationLink = [
@@ -15,7 +15,7 @@ const navigationLink = [
     {link: '/about', icon: <FaRegAddressCard/>, title: 'About', onHoverLight: 'hover:text-cyan-600', onHoverDark: 'hover:text-cyan-300', undrlnBGLight: 'bg-cyan-700', undrlnBGDark: 'bg-cyan-300'},
     {link: '/projects', icon: <GoProjectSymlink/>, title: 'Projects', onHoverLight: 'hover:text-rose-600', onHoverDark: 'hover:text-rose-300', undrlnBGLight: 'bg-rose-700', undrlnBGDark: 'bg-rose-300'},
     {link: '/education', icon: <MdOutlineArticle/>, title: 'Education', onHoverLight: 'hover:text-green-600', onHoverDark: 'hover:text-green-300', undrlnBGLight: 'bg-green-700', undrlnBGDark: 'bg-green-300'},
-    {link: '/faq', icon: <TfiThought />, title: 'FAQ', onHoverLight: 'hover:text-blue-600', onHoverDark: 'hover:text-blue-300', undrlnBGLight: 'bg-blue-700', undrlnBGDark: 'bg-blue-300'},
+    {link: '/feedback', icon: <VscFeedback />, title: 'Feedback', onHoverLight: 'hover:text-lime-600', onHoverDark: 'hover:text-lime-300', undrlnBGLight: 'bg-lime-700', undrlnBGDark: 'bg-lime-300'},
 ]
 
 const Navbar = () => {
@@ -85,13 +85,6 @@ const Navbar = () => {
         }
     }, [])
 
-    const handleScrollToTop = () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        })
-    }
-
     return (
         <div 
         className={`flex items-center justify-between w-full px-1 2xl:px-28 py-3 ${
@@ -125,7 +118,7 @@ const Navbar = () => {
                                 onMouseEnter={() => handleMouseEnter(index)}
                                 onMouseLeave={() => handleMouseLeave(index)}>
                                     <span className={`flex items-center justify-center gap-x-1 ${mode === 'dark' ? `text-violet-300 ${item.onHoverDark}` : `text-violet-800 ${item.onHoverLight}`}`}>
-                                        <span className='text-[18px]'>
+                                        <span className='text-[18px] hidden xl:block'>
                                             {item.icon}
                                         </span>
                                         <span className=''>

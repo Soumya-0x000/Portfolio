@@ -7,11 +7,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.dark {
-    background: #011b3b;
-    color: white;
+/* Hide scrollbar for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+    display: none;
 }
-.light {
-    color: #011b3b;
-    background-color: white;
+
+/* Optional: Hide scrollbar for Firefox */
+* {
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+}
+
+*::-webkit-scrollbar {
+    width: 0.4em;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: transparent;
 }

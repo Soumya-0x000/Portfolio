@@ -24,7 +24,7 @@ const SliderToggle = ({ mode, toggleMode }) => {
             <button
             className={`${TOGGLE_CLASSES} ${
                 mode === "light" ? "text-white" : "text-slate-300"
-            }`}
+            } rounded-full z-10`}
             onClick={toggleMode}>
                 <FiSun className="relative  z-10 text-lg lg:text-sm" />
                 <span className="relative z-10">Light</span>
@@ -33,9 +33,9 @@ const SliderToggle = ({ mode, toggleMode }) => {
             <button
             className={`${TOGGLE_CLASSES} ${
                 mode === "dark" ? "text-white" : "text-slate-800"
-            }`}
+            } rounded-full z-10`}
             onClick={toggleMode}>
-                <FiMoon className="relative z-10 text-lg lg:text-sm" />
+                <FiMoon className="relative z-1 text-lg lg:text-sm" />
                 <span className="relative z-10">Dark</span>
             </button>
 
