@@ -113,7 +113,7 @@ const Home = () => {
                 <motion.div 
                 className='hidden lg:block w-20 xl:w-24 absolute right-6 bottom-20'
                 initial={{y: -1000}}
-                animate={{y: 0}}>
+                animate={{y: 0, transition: {duration: .7}}}>
                     <img src={bulb} className='w-full'/>            
                 </motion.div>            
             </div>
