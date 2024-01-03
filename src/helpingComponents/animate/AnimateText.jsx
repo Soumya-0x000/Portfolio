@@ -59,7 +59,7 @@ const EncryptButton = ({mainText}) => {
     };
 
     return (
-        <motion.button
+        <motion.div
         whileHover={{scale: 1.025}}
         whileTap={{scale: 0.975}}
         className={`group z-20 relative overflow-hidden rounded-lg ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-700'} px-2 lg:px-4 py-1 lg:py-2 font-mono font-medium uppercase text-slate-300 transition-colors hover:text-indigo-300`}
@@ -80,7 +80,7 @@ const EncryptButton = ({mainText}) => {
                 }}
                 className="duration-300 absolute inset-0 z-0 scale-125 bg-gradient-to-t from-indigo-400/0 from-40% via-indigo-400/100 to-indigo-400/0 to-60% opacity-0 transition-opacity group-hover:opacity-100"
             />
-        </motion.button>
+        </motion.div>
     );
 };
 

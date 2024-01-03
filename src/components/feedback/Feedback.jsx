@@ -15,7 +15,11 @@ const Feedback = () => {
     const [msg, setMsg] = useState('')
 
     const handleSubmit = () => {
-        
+        if (fstName.trim().length >= 4 && midName.trim().length > 0 && lstName.trim().length >= 3 && mail.trim().length >= 15 && msg.trim().length >= 2) {
+            alert('Congratulations.....🥳🥳🥳🥳🥳')
+        } else {
+            alert('Fill-up all required fields')
+        }
     }
 
     const handleReset = () => {
@@ -35,9 +39,11 @@ const Feedback = () => {
             <div className='mt-14 px-1 flex flex-col lg:flex-row gap-x-5 xl:gap-x-16 gap-y-9 items-start justify-between'>
                 <div className='w-full space-y-5 lg:max-w-[30%]'>
                     <p className='text-xl'>Don't be shy!</p>
+                    
                     <p className='opacity-60 text-[13px] text-justify'>
                         If you like my work, leave a message for me. So that I can know the impact of my efforts and understand how it has resonated with you. Your feedback is invaluable. Whether it's a suggestion, a word of appreciation, or constructive criticism, your messages provide the fuel that propels me forward.
                     </p>
+                    
                     <div className='flex md:items-center lg:items-start justify-between flex-col md:flex-row lg:flex-col gap-y-2 lg:gap-y-4 xl:gap-y-6'>
                         <div className='flex items-center gap-x-4'>
                             <span className={`text-xl ${mode === 'dark' ? 'bg-indigo-800' : 'bg-indigo-200 text-indigo-800'} p-[10px] rounded-full`}><MdPersonOutline/></span>
@@ -69,16 +75,17 @@ const Feedback = () => {
                                 placeholder='First name'
                                 value={fstName}
                                 onChange={(e) => setFstName(e.target.value)}
-                                className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-green-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                                className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                                 min={5}
                                 max={20}
+                                required
                             />
                             <input 
                                 type="text"
                                 placeholder='Middle name'
                                 value={midName}
                                 onChange={(e) => setMidName(e.target.value)}
-                                className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-green-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                                className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                                 min={5}
                                 max={20}
                             />
@@ -87,33 +94,37 @@ const Feedback = () => {
                                 placeholder='Last name'
                                 value={lstName}
                                 onChange={(e) => setLstName(e.target.value)}
-                                className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-green-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                                className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                                 min={5}
                                 max={20}
+                                required
                             />
                         </div>
+
                         <div className='space-y-4 flex flex-col'>
                             <input 
                                 type="email"
                                 placeholder='Email address'
                                 value={mail}
                                 onChange={(e) => setMail(e.target.value)}
-                                className={`w-full rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-green-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                                className={`w-full rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                                 min={18}
                                 max={40}
+                                required
                             /> 
                             <textarea 
                                 type="text"
                                 placeholder='Your message'
                                 value={msg}
                                 onChange={(e) => setMsg(e.target.value)}
-                                className={`w-full min-h-[16rem] rounded-xl pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-green-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                                className={`w-full min-h-[16rem] rounded-xl pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                                required
                             />
                         </div>
                     </div>
                     
                     {/* Button */}
-                    <div className='mt-9 flex items-center justify-between'>
+                    <div className='mt-9 flex items-center justify-between mb-7 xl:mb-0'>
                         <button 
                         type="reset" 
                         onClick={handleReset}
