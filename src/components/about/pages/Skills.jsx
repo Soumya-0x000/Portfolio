@@ -103,7 +103,7 @@ const Skills = () => {
             </span>
 
             <div 
-            className={`w-full  ${willShuffle ? '' : 'cursor-none'}`} 
+            className={`w-full  ${willShuffle ? '' : 'cursor-grab'}`} 
             onMouseEnter={() => setWillShuffle(false)}
             onMouseLeave={() => setWillShuffle(true)}>
                 <ShuffleGrid mode={mode} isShuffle={willShuffle} />
