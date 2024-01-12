@@ -46,14 +46,13 @@ const squareData = [
     {id: 12, name: 'GitHub', src: github, shadow: 'shadow-slate-400', border: 'border-slate-400'},
 ];
   
-const generateSquares = (mode) => {
-    // console.log(mode);
+const generateSquares = (mode, isShuffle) => {
     return (
-        shuffle(squareData).map((sq) => (
+        shuffle(squareData, isShuffle).map((sq) => (
             <motion.div
             key={sq.id}
             layout
-            transition={{ duration: 1.5, type: "spring" }}
+            transition={{ duration: 1.5, type: 'spring' }}
             className={`w-[70px] sm:w-[80px] lg:w-[95px] 2xl:w-[110px] h-[70px] sm:h-[80px] lg:h-[95px] 2xl:h-[110px] rounded-full bg-center object-cover object-center p-[2px] cursor-pointer shadow-lg ${sq.shadow} mx-auto `}
             >
                 <div className={`bg-slate p-2 rounded-full h-full w-full flex items-center justify-center overflow-hidden ${mode === 'dark' ? 'hover:bg-slate-800' : 'hover:bg-slate-200'} transition-all`}>
@@ -64,15 +63,15 @@ const generateSquares = (mode) => {
     );
 };
     
-const ShuffleGrid = ({mode}) => {
+const ShuffleGrid = ({mode, isShuffle}) => {
     const timeoutRef = useRef(null);
     const [squares, setSquares] = useState(generateSquares(mode));
 
     useEffect(() => {
-        shuffleSquares();
+        isShuffle && shuffleSquares();
 
         return () => clearTimeout(timeoutRef.current);
-    }, []);
+    }, [isShuffle]);
 
     const shuffleSquares = () => {
         setSquares(generateSquares(mode));
@@ -89,6 +88,7 @@ const ShuffleGrid = ({mode}) => {
 
 const Skills = () => {
     const {mode} = useTheme()
+    const [willShuffle, setWillShuffle] = useState(true)
 
     return (
         <div className='flex items-center flex-col gap-y-8 sm:gap-y-[50px] mt-20 pb-24'>
@@ -102,7 +102,12 @@ const Skills = () => {
                 </motion.span>
             </span>
 
-            <ShuffleGrid mode={mode} />
+            <div 
+            className={`w-full  ${willShuffle ? '' : 'cursor-grab'}`} 
+            onMouseEnter={() => setWillShuffle(false)}
+            onMouseLeave={() => setWillShuffle(true)}>
+                <ShuffleGrid mode={mode} isShuffle={willShuffle} />
+            </div>
         </div>
     )
 }

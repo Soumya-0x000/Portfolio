@@ -1,5 +1,5 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import myself from '../../../assets/071ba5eb-4186-4b4f-9bd7-ad8352fbcecc.jpeg'
+import myself from '../../../assets/071ba5eb-4186-4b4f-9bd7-ad8352fbcecc.jpg'
 import CountUp from 'react-countup'
 import { motion, useInView } from 'framer-motion'
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'

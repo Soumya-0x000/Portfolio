@@ -1,5 +1,5 @@
 import React from 'react'
-import mySelf from '../../assets/4f48722a-7e4a-4b16-9c49-a5b86b99050d.png'
+import mySelf from '../../assets/4f48722a-7e4a-4b16-9c49-a5b86b99050d.jpg'
 import bulb from '../../assets/bulb.svg'
 import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
