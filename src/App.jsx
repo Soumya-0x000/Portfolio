@@ -9,13 +9,13 @@ import Projects from './components/projects/Projects'
 import Education from './components/Education/Education'
 import StarsCanvas from './helpingComponents/animate/StarCanvas'
 import Feedback from './components/feedback/Feedback'
+import LiveChat from './LiveChat'
 
 function App() {
-    const {mode} = useTheme()
-
     return (
         <BrowserRouter>
             <ThemeProvider>
+                <LiveChat/>
                 <SocialMEdiaIcon/>
                 <Navbar/>
                 <StarsCanvas/>
