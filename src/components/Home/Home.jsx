@@ -62,7 +62,7 @@ const Home = () => {
                     </motion.div>
 
                     {/* Description, resume */}
-                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0'>
+                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 mb-5'>
                         <motion.div 
                         className='pb-1 text-[28px] sm:text-5xl xl:text-6xl mt-6 md:mt-0 font-bold flex items-center justify-center lg:justify-start flex-wrap 2xl:pr-20'
                         variants={animateHeading}
@@ -116,7 +116,7 @@ const Home = () => {
                 className='hidden lg:block w-20 xl:w-24 absolute right-6 bottom-20'
                 initial={{y: -1000}}
                 animate={{y: 0, transition: {duration: .7}}}>
-                    <img src={bulb} className='w-full'/>
+                    <img src={bulb} className='w-full'/>            
                 </motion.div>            
             </div>
 
