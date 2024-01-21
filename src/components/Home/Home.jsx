@@ -49,7 +49,7 @@ const Home = () => {
             <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px]'} relative pt-[100px] sm:pt-[60px]`}>
                 <StarsCanvas/>
                 {/* Main */}
-                <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] h-full sm:h-screen'>
+                <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen'>
                     {/* TiltImg Image */}
                     <motion.div 
                     initial={{y: -400, opacity: 0}}
@@ -121,7 +121,7 @@ const Home = () => {
             </div>
 
             {open && (
-                <div className=' fixed top-0 left-0 w-full h-full'/>
+                <div className=' fixed top-0 left-0 w-full min-h-screen'/>
             )}
         </>
     )
