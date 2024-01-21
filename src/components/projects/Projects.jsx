@@ -82,7 +82,7 @@ const Projects = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-light' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-3 min-h-screen pt-[70px] sm:pt-[60px]`}>
+            <div className={`${mode === 'dark' ? 'text-light' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-3 min-h-full pt-[70px] sm:pt-[60px]`}>
                 <StarsCanvas/>
                 <div className={`text-center text-[25px] sm:text-5xl md:text-[55px] lg:text-[73px] font-extrabold 2xl:text-8xl pt-3 sm:pt-6 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20`}>
                     <TextReveal child={`Projects I've completed!`}/>

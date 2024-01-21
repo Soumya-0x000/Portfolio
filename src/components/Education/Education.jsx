@@ -55,7 +55,7 @@ const Education = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] pl-3 pr-2 sm:pl-10 sm:pr-10 sm:px-10 lg:px-8 2xl:px-28 min-h-screen pb-10`}>
+            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] pl-3 pr-2 sm:pl-10 sm:pr-10 sm:px-10 lg:px-8 2xl:px-28 h-full pb-10`}>
                 <StarCanvas/>
                 <div className={`text-[30px] sm:text-5xl md:text-[55px] lg:text-[73px] 2xl:text-8xl font-extrabold pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
                     <TextReveal child={`My Education `}/>

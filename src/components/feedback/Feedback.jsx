@@ -35,7 +35,7 @@ const Feedback = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] px-1 sm:px-5 lg:px-8 2xl:px-28 min-h-screen`}>
+            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] px-1 sm:px-5 lg:px-8 2xl:px-28 h-full sm:h-screen`}>
                 <StarsCanvas/>
                 <div className={`text-[25px] sm:text-5xl md:text-[55px] lg:text-[66px] 2xl:text-[80px] font-extrabold pt-8 xl:pt-14 lg:pt-16 lg:px-14 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
                     <TextReveal child={`Let me know your thoughts!`}/>
