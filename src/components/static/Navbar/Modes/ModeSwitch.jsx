@@ -26,7 +26,7 @@ const SliderToggle = ({ mode, toggleMode }) => {
                 mode === "light" ? "text-white" : "text-slate-300"
             } rounded-full z-10`}
             onClick={toggleMode}>
-                <FiSun className="relative  z-10 text-lg lg:text-sm" />
+                <FiSun className="relative z-10 text-lg lg:text-sm" />
                 <span className="relative z-10">Light</span>
             </button>
 

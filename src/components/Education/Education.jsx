@@ -1,15 +1,17 @@
 import React, { useRef } from 'react'
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import { TextReveal } from '../../helpingComponents/textReveal/TextReveal'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion, useScroll } from 'framer-motion'
 import vuLogo from '../../assets/education/vu_logo.jpg'
 import vuGate from '../../assets/education/vu-gate.jpg'
 import mdnCLG from '../../assets/education/mdnCLG.png'
 import school from '../../assets/education/school.jpg'
+import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
+import StarCanvas from '../../helpingComponents/animate/StarCanvas'
 
 const Education = () => {
     const {mode} = useTheme()
+    const {open} = useBgContext()
     const containerRef = useRef()
     const {scrollYProgress} = useScroll()
 
@@ -52,58 +54,65 @@ const Education = () => {
     }
 
     return (
-        <div className={`${mode === 'dark' ? 'text-lighter' : ''} pt-[80px] sm:pt-[100px] pl-3 pr-2 sm:pl-10 sm:pr-10 sm:px-10 lg:px-8 2xl:px-28 min-h-screen`}>
-            <div className={`text-[30px] sm:text-5xl md:text-[55px] lg:text-[73px] 2xl:text-8xl font-extrabold pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
-                <TextReveal child={`My Education `}/>
-            </div>
+        <>
+            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] pl-3 pr-2 sm:pl-10 sm:pr-10 sm:px-10 lg:px-8 2xl:px-28 min-h-screen pb-10`}>
+                <StarCanvas/>
+                <div className={`text-[30px] sm:text-5xl md:text-[55px] lg:text-[73px] 2xl:text-8xl font-extrabold pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
+                    <TextReveal child={`My Education `}/>
+                </div>
 
-            <div 
-            className='mt-4 sm:mt-9 xl:mt-14 mb-10 w-full relative flex justify-center items-center'
-            ref={containerRef}>
-                <motion.div 
-                    className={`absolute top-2 left-1/2 translate-x-1/2 origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-blue-300' : 'bg-blue-400'} `}
-                    style={{scaleY: scrollYProgress}}
-                />
-                <motion.div 
-                    className={`absolute top-2 left-[25%] md:left-[35%] translate-x-[25%] md:translate-x-[35%] origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-red-300' : 'bg-red-400'} `}
-                    style={{scaleY: scrollYProgress}}
-                />
-                <motion.div 
-                    className={`absolute top-2 right-[25%] md:right-[35%] -translate-x-[25%] md:-translate-x-[25%]  origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-red-300' : 'bg-red-400'} `}
-                    style={{scaleY: scrollYProgress}}
-                />
-                <div className='space-y-14 flex flex-col z-20'>
-                    <Institutions 
-                        logo={vuLogo} 
-                        course={`Master's of Computer Application`} 
-                        name={'Vidyasagar University'}
-                        duration={'2022 - 2024'}
-                        crntState={`Currently pursuing`}
+                <div 
+                className='mt-4 sm:mt-9 xl:mt-14  w-full relative flex justify-center items-center'
+                ref={containerRef}>
+                    <motion.div 
+                        className={`absolute top-2 left-1/2 translate-x-1/2 origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-blue-300' : 'bg-blue-400'} `}
+                        style={{scaleY: scrollYProgress}}
                     />
-                    <Institutions
-                        logo={mdnCLG} 
-                        course={`Bachelors of Computer Application`} 
-                        name={'Midnapore College (Autonomous)'}
-                        duration={'2019 - 2022'}
-                        crntState={`Graduated (81.24%)`}
+                    <motion.div 
+                        className={`absolute top-2 left-[25%] md:left-[35%] translate-x-[25%] md:translate-x-[35%] origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-red-300' : 'bg-red-400'} `}
+                        style={{scaleY: scrollYProgress}}
                     />
-                    <Institutions
-                        logo={school} 
-                        course={`Higher Secondary (10 + 2)`} 
-                        name={`Sri Narayan Vidyabhaban Boys' High School`}
-                        duration={'2016 - 2018'}
-                        crntState={`Passed (68.80%)`}
+                    <motion.div 
+                        className={`absolute top-2 right-[25%] md:right-[35%] -translate-x-[25%] md:-translate-x-[25%]  origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-red-300' : 'bg-red-400'}`}
+                        style={{scaleY: scrollYProgress}}
                     />
-                    <Institutions
-                        logo={school} 
-                        course={`Secondary (10)`} 
-                        name={`Sri Narayan Vidyabhaban Boys' High School`}
-                        duration={'2014 - 2016'}
-                        crntState={`Passed (82%) `}
-                    />
+                    <div className='space-y-14 flex flex-col z-20'>
+                        <Institutions 
+                            logo={vuLogo} 
+                            course={`Master's of Computer Application`} 
+                            name={'Vidyasagar University'}
+                            duration={'2022 - 2024'}
+                            crntState={`Currently pursuing`}
+                        />
+                        <Institutions
+                            logo={mdnCLG} 
+                            course={`Bachelors of Computer Application`} 
+                            name={'Midnapore College (Autonomous)'}
+                            duration={'2019 - 2022'}
+                            crntState={`Graduated (81.24%)`}
+                        />
+                        <Institutions
+                            logo={school} 
+                            course={`Higher Secondary (10 + 2)`} 
+                            name={`Sri Narayan Vidyabhaban Boys' High School`}
+                            duration={'2016 - 2018'}
+                            crntState={`Passed (68.80%)`}
+                        />
+                        <Institutions
+                            logo={school} 
+                            course={`Secondary (10)`} 
+                            name={`Sri Narayan Vidyabhaban Boys' High School`}
+                            duration={'2014 - 2016'}
+                            crntState={`Passed (82%) `}
+                        />
+                    </div>
                 </div>
             </div>
-        </div>
+
+            {open && (
+                <div className=' fixed top-0 left-0 w-full h-full'/>
+            )}
+        </>
     )
 }
 

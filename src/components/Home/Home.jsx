@@ -10,6 +10,7 @@ import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import './borderAnimation.css'
 import { CardSpotlight } from '../../helpingComponents/CardSpotlight/CardSpotlight'
 import StarsCanvas from '../../helpingComponents/animate/StarCanvas'
+import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 
 const animateHeading = {
     initial: {
@@ -40,11 +41,12 @@ const eachWord = {
 
 const Home = () => {
     const {mode} = useTheme()
+    const {open} = useBgContext()
     const text = 'Myself Soumya, who loves to Code and Design.'
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-lighter' : ''} relative pt-[100px] sm:pt-[60px]`}>
+            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px]'} relative pt-[100px] sm:pt-[60px]`}>
                 <StarsCanvas/>
                 {/* Main */}
                 <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen'>
@@ -60,7 +62,7 @@ const Home = () => {
                     </motion.div>
 
                     {/* Description, resume */}
-                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0 mb-5'>
+                    <div className='space-y-6 xl:space-y-5 flex flex-col items-center lg:items-start justify-center sm:px-[60px] md:px-0'>
                         <motion.div 
                         className='pb-1 text-[28px] sm:text-5xl xl:text-6xl mt-6 md:mt-0 font-bold flex items-center justify-center lg:justify-start flex-wrap 2xl:pr-20'
                         variants={animateHeading}
@@ -114,9 +116,13 @@ const Home = () => {
                 className='hidden lg:block w-20 xl:w-24 absolute right-6 bottom-20'
                 initial={{y: -1000}}
                 animate={{y: 0, transition: {duration: .7}}}>
-                    <img src={bulb} className='w-full'/>            
+                    <img src={bulb} className='w-full'/>
                 </motion.div>            
             </div>
+
+            {open && (
+                <div className=' fixed top-0 left-0 w-full h-full'/>
+            )}
         </>
     )
 }
