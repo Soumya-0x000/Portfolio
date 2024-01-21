@@ -121,7 +121,7 @@ const Home = () => {
             </div>
 
             {open && (
-                <div className=' fixed top-0 left-0 w-full min-h-screen'/>
+                <div className=' fixed top-0 left-0 bottom-0 w-full '/>
             )}
         </>
     )
