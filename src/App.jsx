@@ -8,7 +8,7 @@ import About from './components/about/About'
 import Projects from './components/projects/Projects'
 import Education from './components/Education/Education'
 import Feedback from './components/feedback/Feedback'
-import LiveChat from './LiveChat'
+// import LiveChat from './LiveChat'
 import { NavProvider } from './helpingComponents/hook/BgBlurContext'
 
 function App() {
