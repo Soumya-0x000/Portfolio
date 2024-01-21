@@ -12,7 +12,7 @@ import { TextReveal } from '../../helpingComponents/textReveal/TextReveal'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList } from '@fortawesome/free-solid-svg-icons'
 import { motion } from 'framer-motion'
-import TabView from './Tabview'
+import TabView from './TabView'
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import GridViewProject from './view/GridViewProject'
 import ListViewProject from './view/ListViewProject'
