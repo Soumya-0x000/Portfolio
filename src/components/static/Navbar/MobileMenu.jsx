@@ -59,7 +59,7 @@ const MobileMenu = ({ mobileMenuLinks }) => {
                 initial={wrapperVariants.closed}
                 variants={wrapperVariants}
                 style={{ originY: "top", translateX: "-50%" }}
-                className={`flex flex-col gap-2 p-2 rounded-lg  ${mode === 'dark' ? 'bg-blue-950' : 'bg-blue-200'} shadow-xl w-48 sm:w-[20rem] md:w-[26rem] ${height && 'h-[7rem] overflow-auto'} fixed left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2`}>
+                className={`flex flex-col gap-2 p-2 rounded-lg  ${mode === 'dark' ? 'bg-blue-950' : 'bg-blue-200'} shadow-xl w-48 sm:w-[20rem] md:w-[26rem] ${height && 'h-[10.3rem] overflow-auto'} fixed left-1/2 -translate-x-1/2 top-[40%] -translate-y-1/2`}>
                     {mobileMenuLinks.map((item, index) => (
                         <Option 
                             setOpen={setOpen} 
