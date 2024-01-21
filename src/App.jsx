@@ -16,7 +16,7 @@ function App() {
         <BrowserRouter>
             <ThemeProvider>
                 <NavProvider>
-                    <LiveChat/>
+                    {/* <LiveChat/> */}
                     <SocialMEdiaIcon/>
                     <Navbar/>
                     <Routes>
