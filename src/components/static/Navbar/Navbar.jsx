@@ -75,6 +75,7 @@ const Navbar = () => {
             } else {
                 setBtnTxt('SSD PORTFOLIO')
                 setCollapseNav(false)
+                setOpen(false)
             };
         };
 
@@ -87,29 +88,29 @@ const Navbar = () => {
         }
     }, [])
 
-    useLayoutEffect(() => {
-        const handleResize = () => {
-            const widthScr = window.innerWidth
+    // useLayoutEffect(() => {
+    //     const handleResize = () => {
+    //         const widthScr = window.innerWidth
 
-            if(widthScr <= 1024) {
-                setOpen(record)
-            } else {
-                if(widthScr <= 1024) {
-                    setOpen(record)
-                } else {
-                    setOpen(false)
-                }
-            };
-        };
+    //         if(widthScr <= 1024) {
+    //             setOpen(record)
+    //         } else {
+    //             if(widthScr <= 1024) {
+    //                 setOpen(record)
+    //             } else {
+    //                 setOpen(false)
+    //             }
+    //         };
+    //     };
 
-        handleResize()
+    //     handleResize()
 
-        window.addEventListener('resize', handleResize)
+    //     window.addEventListener('resize', handleResize)
         
-        return () => {
-            window.removeEventListener('resize', handleResize)
-        }
-    }, [record])
+    //     return () => {
+    //         window.removeEventListener('resize', handleResize)
+    //     }
+    // }, [record])
 
     return (
         <div 
