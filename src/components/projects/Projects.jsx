@@ -89,7 +89,7 @@ const Projects = () => {
                 </div>
                 
                 {/* Switch view */}
-                {/* <motion.div 
+                <motion.div 
                 initial={{y: -300}}
                 animate={{y: 0, transition:{delay: .7, duration: .8}}}
                 className='w-full flex items-center justify-center mt-3 sm:mt-5 md:mt-7'>
@@ -100,7 +100,7 @@ const Projects = () => {
                         </div>
                         <TabView options={view} chosenView={tabView} setTabView={setTabView} />
                     </div>
-                </motion.div> */}
+                </motion.div>
 
                 <div className='mt-10 pb-16'>
                     {tabView === 'Grid' ? ( 
