@@ -30,13 +30,13 @@ const Feedback = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] px-1 sm:px-5 lg:px-8 2xl:px-28 min-h-screen`}>
+            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] px-1 sm:px-5 lg:px-8 2xl:px-28 min-h-screen `}>
                 <StarsCanvas/>
                 <div className={`text-[25px] sm:text-5xl md:text-[55px] lg:text-[66px] 2xl:text-[80px] font-extrabold sm:pt-6 md:pt-8 xl:pt-14 lg:pt-16 lg:px-14 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
                     <TextReveal child={`Let me know your thoughts!`}/>
                 </div>
 
-                <div className='mt-4 sm:mt-7 md:mt-14 px-1 flex flex-col lg:flex-row gap-x-5 xl:gap-x-16 gap-y-9 items-start justify-between'>
+                <div className='mt-4 sm:mt-7 md:mt-14 xl:mt-24 2xl:mt-36 px-1 flex flex-col lg:flex-row gap-x-5 xl:gap-x-16 gap-y-9 items-start justify-between'>
                     <div className='w-full space-y-2 sm:space-y-4 md:space-y-5 lg:max-w-[30%]'>
                         <span className={`text-[24px] font-bold bg-gradient-to-br ${mode === 'dark' ? 'from-rose-300 via-indigo-300 to-green-300' : 'from-rose-400 via-indigo-500 to-green-500'} bg-clip-text text-transparent z-40`}>Don't be shy!</span>
                         
