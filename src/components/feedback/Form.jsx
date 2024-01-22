@@ -12,11 +12,11 @@ const Form = () => {
     const [lstName, setLstName] = useState('')
     const [mail, setMail] = useState('')
     const [msg, setMsg] = useState('')
-    const [isSent, setIsSent] = useState(false)
+    const [isSending, setIsSending] = useState(false)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setIsSent(true)
+        setIsSending(true)
 
         const fullName = midName 
             ? `${fstName} ${midName} ${lstName}` 
@@ -41,7 +41,7 @@ const Form = () => {
         if (fstName.trim().length >= 4 && midName.trim().length >= 0 && lstName.trim().length >= 3 && mail.trim().length >= 15 && msg.trim().length >= 2) {
             try {
                 await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
-                setIsSent(false)
+                setIsSending(false)
                 setFstName('')
                 setMidName('')
                 setLstName('')
@@ -50,9 +50,10 @@ const Form = () => {
             } catch (error) {
                 console.error(error)
                 alert(`Error occurred....💔💔🥺🥺`)
-                setIsSent(false)
+                setIsSending(false)
             }
         } else {
+            setIsSending(false)
             alert('Fill-up all required fields')
         }
     }
@@ -147,7 +148,7 @@ const Form = () => {
                 </div>
             </form>
 
-            {isSent && (
+            {isSending && (
                 <div className=' fixed top-0 left-0 w-full h-full'>
                     <LoadingAnimation/>
                 </div>
