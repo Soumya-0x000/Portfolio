@@ -46,7 +46,7 @@ const Home = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px]'} relative pt-[100px] sm:pt-[60px]`}>
+            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px]'} relative pt-[100px] sm:pt-[60px] min-h-screen`}>
                 <StarsCanvas/>
                 {/* Main */}
                 <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen'>

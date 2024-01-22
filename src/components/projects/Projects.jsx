@@ -82,14 +82,14 @@ const Projects = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-light' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-3 pt-[70px] sm:pt-[60px]`}>
+            <div className={`${mode === 'dark' ? 'text-light' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-3 pt-[70px] sm:pt-[60px] min-h-screen`}>
                 <StarsCanvas/>
                 <div className={`text-center text-[25px] sm:text-5xl md:text-[55px] lg:text-[73px] font-extrabold 2xl:text-8xl pt-3 sm:pt-6 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20`}>
                     <TextReveal child={`Projects I've completed!`}/>
                 </div>
                 
                 {/* Switch view */}
-                <motion.div 
+                {/* <motion.div 
                 initial={{y: -300}}
                 animate={{y: 0, transition:{delay: .7, duration: .8}}}
                 className='w-full flex items-center justify-center mt-3 sm:mt-5 md:mt-7'>
@@ -100,7 +100,7 @@ const Projects = () => {
                         </div>
                         <TabView options={view} chosenView={tabView} setTabView={setTabView} />
                     </div>
-                </motion.div>
+                </motion.div> */}
 
                 <div className='mt-10 pb-16'>
                     {tabView === 'Grid' ? ( 

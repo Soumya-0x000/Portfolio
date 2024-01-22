@@ -13,10 +13,10 @@ const About = () => {
     
     return (
         <>
-            <div className={`${mode === 'dark' ? 'bg-darkSlat text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-10 pt-[70px] sm:pt-[60px]`}>
+            <div className={`${mode === 'dark' ? 'bg-darkSlat text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-10 pt-[70px] sm:pt-[60px] min-h-screen`}>
                 <StarsCanvas/>
                 {/* heading */}
-                <div className={` text-center text-[27px] sm:text-6xl md:text-[80px] font-extrabold 2xl:text-8xl pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'}`}
+                <div className={` text-center text-[27px] sm:text-6xl md:text-[80px] font-extrabold 2xl:text-8xl pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} `}
                 ref={containerRef}>
                     <TextReveal child={'Passion Fuels Purpose!'}/>
                 </div>
