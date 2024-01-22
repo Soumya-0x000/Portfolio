@@ -42,7 +42,7 @@ const projectDetails = [
         img: portfolio, name: 'Personal portfolio', 
         ghLink: 'https://github.com/Soumya-0x000/Portfolio', 
         lvLink: 'https://portfolio-five-mu-72.vercel.app/', 
-        usedTech: ['React JS', 'Tailwind CSS', 'Three JS', 'Framer Motion', 'React Tilt', 'React Router DOM'],
+        usedTech: ['React JS', 'Tailwind CSS', 'Three JS', 'Framer Motion', 'Email JS', 'React Tilt', 'React Router DOM'],
     },
     {
         img: TodoList, name: 'Todo List', 
