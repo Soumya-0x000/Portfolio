@@ -1,10 +1,10 @@
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { CgFileDocument  } from "react-icons/cg"
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import React, { useLayoutEffect, useState } from 'react'
-import { CgDetailsMore } from 'react-icons/cg';
-import { useTheme } from '../../../helpingComponents/hook/ThemeContext';
+import { useTheme } from '../../../../helpingComponents/hook/ThemeContext';
 
 const staggerVariants = {
     initial: {},
@@ -14,7 +14,7 @@ const staggerVariants = {
         },
     },
 };
-  
+
 const childVariants = {
     initial: { opacity: 0, y: 200, scale: 2},
     animate: { opacity: 1, y: 0, scale: 1},
@@ -130,7 +130,7 @@ const GridViewProject = ({projectDetails}) => {
                     <div className={`mt-4 flex items-center justify-between w-full ring-[1px] rounded-lg px-2 py-1 ring-indigo-400 ${mode === 'dark' ? 'bg-indigo-900 text-violet-300' : 'bg-indigo-300 text-violet-600'} `}>
                         <div className={`flex flex-row-reverse items-center justify-center gap-x-2`}>
                             {scrWidth && (
-                                <CgDetailsMore 
+                                <CgFileDocument  
                                     className={`text-[1.5rem] ${
                                         mode === 'dark' ? 'hover:text-green-300' : 'hover:text-blue-700'
                                     }`}

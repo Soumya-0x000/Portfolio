@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { v4 } from "uuid";
-import { useTheme } from "../../helpingComponents/hook/ThemeContext";
+import { useTheme } from "../../../helpingComponents/hook/ThemeContext";
 
 const TabView = ({options, setTabView}) => {
     const [selected, setSelected] = useState(options[0].name);

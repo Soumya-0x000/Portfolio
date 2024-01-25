@@ -4,6 +4,21 @@ import { VscSend } from "react-icons/vsc";
 import { useTheme } from '../../helpingComponents/hook/ThemeContext';
 import axios from 'axios';
 import LoadingAnimation from '../../helpingComponents/animate/LoadingAnimation';
+import { motion } from 'framer-motion';
+
+const staggerVariants = {
+    initial: {},
+    animate: {
+        transition: {
+            staggerChildren: 0.25,
+        }
+    }
+}
+
+const childVariants = {
+    initial: {y: 300, },
+    animate: {y: 0, transition: {duration: .4, } }
+}
 
 const Form = () => {
     const {mode} = useTheme()
@@ -68,9 +83,19 @@ const Form = () => {
 
     return (
         <>
-            <form className={`w-full`}>
-                <div className=' w-full h-full space-y-4'>
-                    <div className='w-full flex flex-col md:flex-row gap-y-4 gap-x-5'>
+            <motion.form 
+            variants={staggerVariants}
+            initial='initial'
+            animate='animate'
+            className={`w-full`}>
+                <motion.div 
+                variants={childVariants} 
+                className=' w-full h-full space-y-4'>
+                    <div 
+                    variants={staggerVariants}
+                    initial='initial'
+                    animate='animate'
+                    className='w-full flex flex-col md:flex-row gap-y-4 gap-x-5'>
                         <input 
                             type="text"
                             placeholder='First name'
@@ -102,7 +127,9 @@ const Form = () => {
                         />
                     </div>
 
-                    <div className='space-y-4 flex flex-col'>
+                    <motion.div 
+                    variants={childVariants} 
+                    className='space-y-4 flex flex-col'>
                         <input 
                             type="email"
                             placeholder='Email address'
@@ -121,11 +148,11 @@ const Form = () => {
                             className={`w-full min-h-[16rem] rounded-xl pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                             required
                         />
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
                 
                 {/* Button */}
-                <div className='mt-9 flex items-center justify-between mb-7 xl:mb-0'>
+                <motion.div variants={childVariants} className='mt-9 flex items-center justify-between mb-7 xl:mb-0'>
                     <button 
                     type="reset" 
                     onClick={handleReset}
@@ -145,8 +172,8 @@ const Form = () => {
                             <VscSend />
                         </div>
                     </button>
-                </div>
-            </form>
+                </motion.div>
+            </motion.form>
 
             {isSending && (
                 <div className=' fixed top-0 left-0 w-full h-full'>

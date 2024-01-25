@@ -21,7 +21,7 @@
     "@tsparticles/react": "^3.0.0",
     "animejs": "^3.2.2",
     "axios": "^1.6.5",
-    "framer-motion": "^10.16.16",
+    "framer-motion": "^10.18.0",
     "maath": "^0.10.7",
     "postcss-cli": "^11.0.0",
     "react": "^18.2.0",

@@ -1,0 +1,16 @@
+.rocketBtn {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+  
+.rocketBtn span {
+    transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+}
+  
+.rocketBtn:hover .rocket {
+    transform: translateX(5px) rotate(45deg);
+}
+  
+.rocketBtn:hover span {
+    transform: translateX(7px);
+}
+  
