@@ -90,7 +90,16 @@ const Form = () => {
             }
         } else {
             setIsSending(false)
-            alert('Fill-up all required fields')
+            toast.warn('Fill-up all required fields..🥺🥺', {
+                position: "top-center",
+                autoClose: 4000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: '',
+                theme: 'dark',
+            });
         }
     }
 
@@ -202,7 +211,10 @@ const Form = () => {
                 </div>
             )}
 
-            <ToastContainer/>
+            <ToastContainer
+                transition: Slide
+                limit={3}
+            />
         </>
     )
 }
