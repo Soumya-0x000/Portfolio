@@ -20,6 +20,7 @@ const ListViewProject = ({ projectDetails }) => {
     const comparableWidth = 1300
     const [measureHeight, setMeasureHeight] = useState(window.innerHeight >= comparableHeight)
     const [measureWidth, setMeasureWidth] = useState(window.innerWidth >= comparableHeight)
+    const [imgSize, setImgSize] = useState('')
 
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
         const cardsBreakpoints = projectDetails.map((_, index) => index / cardLength);
@@ -47,12 +48,19 @@ const ListViewProject = ({ projectDetails }) => {
         }
         handleScrWidth()
 
+        const handleImg = () => {
+            window.innerWidth < 1600 ? setImgSize('contain') : setImgSize('cover')
+        } 
+        handleImg()
+
         window.addEventListener("resize", handleScrWidth)
         window.addEventListener('resize', handleScrHeight)
+        window.addEventListener('resize', handleImg)
 
         return () => {
             window.removeEventListener("resize", handleScrWidth)
             window.removeEventListener("resize", handleScrHeight)
+            window.removeEventListener("resize", handleImg)
         }
     }, [])
     
@@ -123,13 +131,14 @@ const ListViewProject = ({ projectDetails }) => {
             <div className={`${measureHeight ? 'max-h-[40rem]' : 'h-full' } xl: hidden lg:flex w-3/5 items-center justify-center sticky top-0 overflow-hidden`}>
                 <motion.div
                     key={activeCard}
-                    initial={{ opacity: 0, scale: 0.6, y: -500 }}
-                    animate={{ opacity: 1, scale: 1, y: 0, transition: { duration: 0.8 } }}
-                    exit={{ opacity: 0, x: 500, transition: { duration: 0.8 } }}
+                    initial={{ opacity: .7, scale: 1, x: 500 }}
+                    animate={{ opacity: 1, scale: 1, x: 0, transition: { duration: 0.8 } }}
                     style={{
                         background: `url(${projectDetails[activeCard].img})`,
-                        backgroundSize: 'cover',
+                        backgroundSize: imgSize,
+                        backgroundRepeat: 'no-repeat',
                         backgroundPosition: 'center',
+                        aspectRatio: 'auto'
                     }}
                     className="h-full w-[100%] rounded-md bg-white"
                 />

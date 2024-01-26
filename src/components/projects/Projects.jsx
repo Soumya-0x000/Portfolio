@@ -45,7 +45,7 @@ const projectDetails = [
         img: portfolio, name: 'Personal portfolio', 
         ghLink: 'https://github.com/Soumya-0x000/Portfolio', 
         lvLink: 'https://portfolio-five-mu-72.vercel.app/', 
-        usedTech: ['React JS', 'Tailwind CSS', 'Three JS', 'Framer Motion', 'Email JS', 'React Tilt', 'React Router DOM'],
+        usedTech: ['React JS', 'Tailwind CSS', 'Three JS', 'Framer Motion', 'Email JS', 'React Tilt', 'React Router DOM', 'React Toastify'],
         description: `My portfolio serves as a showcase of my skills and knowledge, featuring diverse projects, educational background, and dynamic animations implemented with Framer Motion. It provides a concise overview of my capabilities and experiences.`,
     },
     {
@@ -87,7 +87,7 @@ const Projects = () => {
     const {mode} = useTheme()
     const {open} = useBgContext()
     const [tabView, setTabView] = useState(view[0].name)
-    const comparableWidth = 1070
+    const comparableWidth = 1150
     const [isInView, setIsInView] = useState(window.innerWidth >= comparableWidth)
 
     useLayoutEffect(() => {

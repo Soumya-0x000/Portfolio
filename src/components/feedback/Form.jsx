@@ -5,6 +5,8 @@ import { useTheme } from '../../helpingComponents/hook/ThemeContext';
 import axios from 'axios';
 import LoadingAnimation from '../../helpingComponents/animate/LoadingAnimation';
 import { motion } from 'framer-motion';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const staggerVariants = {
     initial: {},
@@ -32,10 +34,10 @@ const Form = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSending(true)
-
+        
         const fullName = midName 
-            ? `${fstName} ${midName} ${lstName}` 
-            : `${fstName} ${lstName}`
+        ? `${fstName} ${midName} ${lstName}` 
+        : `${fstName} ${lstName}`
         
         const serviceID = 'service_wll1dya'
         const templateID = 'template_3ypazqn'
@@ -52,10 +54,20 @@ const Form = () => {
                 message: msg,
             }
         }
-
+        
         if (fstName.trim().length >= 4 && midName.trim().length >= 0 && lstName.trim().length >= 3 && mail.trim().length >= 15 && msg.trim().length >= 2) {
             try {
                 await axios.post('https://api.emailjs.com/api/v1.0/email/send', data)
+                toast.success('Mail sent successfully....🥳🥳', {
+                    position: "top-right",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: mode,
+                });
                 setIsSending(false)
                 setFstName('')
                 setMidName('')
@@ -64,7 +76,16 @@ const Form = () => {
                 setMsg('')        
             } catch (error) {
                 console.error(error)
-                alert(`Error occurred....💔💔🥺🥺`)
+                toast.error('Error in sending mail....💔🥺', {
+                    position: "top-right",
+                    autoClose: 4000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: mode,
+                })
                 setIsSending(false)
             }
         } else {
@@ -174,12 +195,14 @@ const Form = () => {
                     </button>
                 </motion.div>
             </motion.form>
-
+            
             {isSending && (
                 <div className=' fixed top-0 left-0 w-full h-full'>
                     <LoadingAnimation/>
                 </div>
             )}
+
+            <ToastContainer/>
         </>
     )
 }
