@@ -203,7 +203,7 @@ export const TracingBeam = ({ children }) => {
             </div>
 
 
-            {/* <div className="absolute -top-11 left- hidden sm:block">
+            <div className="absolute -top-11 left- hidden sm:block">
                 <motion.div
                 transition={{ duration: 0.2, delay: 0.5 }}
                 animate={{
@@ -265,7 +265,7 @@ export const TracingBeam = ({ children }) => {
                         </motion.linearGradient>
                     </defs>
                 </svg>
-            </div> */}
+            </div>
             
             <div ref={contentRef}>{children}</div>
         </motion.div>
