@@ -8,14 +8,14 @@ import mdnCLG from '../../assets/education/mdnCLG.png'
 import school from '../../assets/education/school.jpg'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import StarCanvas from '../../helpingComponents/animate/StarCanvas'
+import { TracingBeam } from './TracingBeam'
 
 const Education = () => {
     const {mode} = useTheme()
     const {open} = useBgContext()
     const containerRef = useRef()
-    const {scrollYProgress} = useScroll()
 
-    const Institutions = ({logo, course, name, duration, crntState}) => {
+    const Institutions = ({logo, course, name, duration, currentState}) => {
         return (
             <motion.div
             initial={{y: 700}}
@@ -46,7 +46,7 @@ const Education = () => {
                     </span>
 
                     <span className={` ${mode === 'dark' ? 'text-violet-300' : 'text-violet-800'} font-bold`}>
-                        {crntState}
+                        {currentState}
                     </span>
                 </div>
             </motion.div>
@@ -61,52 +61,42 @@ const Education = () => {
                     <TextReveal child={`My Education `}/>
                 </div>
 
-                <div 
-                className='mt-4 sm:mt-9 xl:mt-14  w-full relative flex justify-center items-center'
-                ref={containerRef}>
-                    <motion.div 
-                        className={`absolute top-2 left-1/2 translate-x-1/2 origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-blue-300' : 'bg-blue-400'} `}
-                        style={{scaleY: scrollYProgress}}
-                    />
-                    <motion.div 
-                        className={`absolute top-2 left-[25%] md:left-[35%] translate-x-[25%] md:translate-x-[35%] origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-red-300' : 'bg-red-400'} `}
-                        style={{scaleY: scrollYProgress}}
-                    />
-                    <motion.div 
-                        className={`absolute top-2 right-[25%] md:right-[35%] -translate-x-[25%] md:-translate-x-[25%]  origin-top-left w-[7px] h-[95%] ${mode === 'dark' ? 'bg-red-300' : 'bg-red-400'}`}
-                        style={{scaleY: scrollYProgress}}
-                    />
-                    <div className='space-y-14 flex flex-col z-20'>
-                        <Institutions 
-                            logo={vuLogo} 
-                            course={`Master's of Computer Application`} 
-                            name={'Vidyasagar University'}
-                            duration={'2022 - 2024'}
-                            crntState={`Currently pursuing`}
-                        />
-                        <Institutions
-                            logo={mdnCLG} 
-                            course={`Bachelors of Computer Application`} 
-                            name={'Midnapore College (Autonomous)'}
-                            duration={'2019 - 2022'}
-                            crntState={`Graduated (81.24%)`}
-                        />
-                        <Institutions
-                            logo={school} 
-                            course={`Higher Secondary (10 + 2)`} 
-                            name={`Sri Narayan Vidyabhaban Boys' High School`}
-                            duration={'2016 - 2018'}
-                            crntState={`Passed (68.80%)`}
-                        />
-                        <Institutions
-                            logo={school} 
-                            course={`Secondary (10)`} 
-                            name={`Sri Narayan Vidyabhaban Boys' High School`}
-                            duration={'2014 - 2016'}
-                            crntState={`Passed (82%) `}
-                        />
+                <TracingBeam>
+                    <div 
+                    className='mt-4 sm:mt-9 xl:mt-14  w-full relative flex justify-center items-center'
+                    ref={containerRef}>
+                        <div className='space-y-14 flex flex-col z-20'>
+                            <Institutions 
+                                logo={vuLogo} 
+                                course={`Master's of Computer Application`} 
+                                name={'Vidyasagar University'}
+                                duration={'2022 - 2024'}
+                                currentState={`Currently pursuing`}
+                            />
+                            <Institutions
+                                logo={mdnCLG} 
+                                course={`Bachelors of Computer Application`} 
+                                name={'Midnapore College (Autonomous)'}
+                                duration={'2019 - 2022'}
+                                currentState={`Graduated (81.24%)`}
+                            />
+                            <Institutions
+                                logo={school} 
+                                course={`Higher Secondary (10 + 2)`} 
+                                name={`Sri Narayan Vidyabhaban Boys' High School`}
+                                duration={'2016 - 2018'}
+                                currentState={`Passed (68.80%)`}
+                            />
+                            <Institutions
+                                logo={school} 
+                                course={`Secondary (10)`} 
+                                name={`Sri Narayan Vidyabhaban Boys' High School`}
+                                duration={'2014 - 2016'}
+                                currentState={`Passed (82%) `}
+                            />
+                        </div>
                     </div>
-                </div>
+                </TracingBeam>
             </div>
 
             {open && (
