@@ -28,7 +28,7 @@ const Feedback = () => {
         return () => clearTimeout(timer)
     }, [])
 
-    const paragraph_1 = `If you like my work, leave a message for me.`
+    const paragraph_1 = `If  you like my work, leave a message for me.`
     const paragraph_2 = `If you like my work, leave a message for me. So that I can know the impact of my efforts and understand how it has resonated with you. Your feedback is invaluable. Whether it's a suggestion, a word of appreciation, or constructive criticism, your messages provide the fuel that propels me forward.`
 
     useLayoutEffect(() => {
