@@ -3,17 +3,15 @@ import { motion } from 'framer-motion'
 import { faLinkedin, faGithub, faInstagram, faXTwitter, faMeta } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
-import { useNavigate } from 'react-router-dom'
 
 const SocialMEdiaIcon = () => {
     const {mode} = useTheme()
-    const navigate = useNavigate()
     
     const iconLinks = [
         {name: faLinkedin, color: '#0e8cec', link: 'https://www.linkedin.com/in/soumya-sankar-das-874085221/' },
         {name: faInstagram, color: "#ed072a", link: 'https://www.instagram.com/' },
         {name: faGithub, color: mode === 'dark' ? '#FFF17F' : '', link: 'https://github.com/Soumya-0x000' },
-        {name: faXTwitter, color: mode === 'dark' ? '#d5a7ff' : '#CF95FF', link: 'https://twitter.com/i/flow/signup' },
+        {name: faXTwitter, color: mode === 'dark' ? '#d5a7ff' : '#CF95FF', link: 'https://twitter.com/Soumya_S_Da' },
         {name: faMeta, color: mode === 'dark' ? '#59ABD6' : '#1A89C4', link: 'https://about.meta.com/meta/%C2%A0' },
     ]
 
