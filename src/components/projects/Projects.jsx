@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import movix from '../../assets/project/movix.png'
 import dashboard from '../../assets/project/dashboard.png'
@@ -18,6 +18,7 @@ import GridViewProject from './components/view/GridViewProject'
 import ListViewProject from './components/view/ListViewProject'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import StarsCanvas from '../../helpingComponents/animate/StarCanvas'
+import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation'
 
 const projectDetails = [
     {
@@ -89,6 +90,16 @@ const Projects = () => {
     const [tabView, setTabView] = useState(view[0].name)
     const comparableWidth = 1150
     const [isInView, setIsInView] = useState(window.innerWidth >= comparableWidth)
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false)
+        }, 1600);
+
+        return () => clearTimeout(timer)
+    }, [])
+
 
     useLayoutEffect(() => {
         const handleScrWidth = () => {
@@ -108,36 +119,40 @@ const Projects = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-light' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-3 pt-[70px] sm:pt-[60px] min-h-screen`}>
-                <StarsCanvas/>
-                <div className={`text-center text-[25px] sm:text-5xl md:text-[55px] lg:text-[73px] font-extrabold 2xl:text-8xl pt-3 sm:pt-6 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'}`}>
-                    <TextReveal child={`Projects I've completed!`}/>
-                </div>
-                
-                {/* Switch view */}
-                {isInView && (
-                    <motion.div 
-                    initial={{y: -300}}
-                    animate={{y: 0, transition:{delay: .7, duration: .8}}}
-                    className='w-full flex items-center justify-center mt-3 sm:mt-5 md:mt-7 lg:sticky top-[65px] z-50'>
-                        <div className={`w-full md:w-[80%] lg:w-[70%] xl:w-[60%] px-1 py-1 md:py-2 md:px-2 flex items-center justify-between rounded-full bg-gradient-to-br ${mode === 'dark' ? 'from-[#823c9ef3] to-[#035caaf2]' : 'ring-[1p] from-[#94ffcb] to-[#87bbff] ring-violet-600'} `}>
-                            <div className={`text-white text-sm transition-colors px-4 py-1 sm:py-2 rounded-full relative`}>
-                                <span className="relative z-10 flex items-center justify-center gap-x-2 text-[15px] md:text-[17px]">View</span>
-                                <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"></span>
+            {loading ? (
+                <PageLoadingAnimation/>
+            ) : (
+                <div className={`${mode === 'dark' ? 'text-light' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-3 pt-[70px] sm:pt-[60px] min-h-screen`}>
+                    <StarsCanvas/>
+                    <div className={`text-center text-[25px] sm:text-5xl md:text-[55px] lg:text-[73px] font-extrabold 2xl:text-8xl pt-3 sm:pt-6 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'}`}>
+                        <TextReveal child={`Projects I've completed!`}/>
+                    </div>
+                    
+                    {/* Switch view */}
+                    {isInView && (
+                        <motion.div 
+                        initial={{y: -300}}
+                        animate={{y: 0, transition:{delay: .7, duration: .8}}}
+                        className='w-full flex items-center justify-center mt-3 sm:mt-5 md:mt-7 lg:sticky top-[65px] z-50'>
+                            <div className={`w-full md:w-[80%] lg:w-[70%] xl:w-[60%] px-1 py-1 md:py-2 md:px-2 flex items-center justify-between rounded-full bg-gradient-to-br ${mode === 'dark' ? 'from-[#823c9ef3] to-[#035caaf2]' : 'ring-[1p] from-[#94ffcb] to-[#87bbff] ring-violet-600'} `}>
+                                <div className={`text-white text-sm transition-colors px-4 py-1 sm:py-2 rounded-full relative`}>
+                                    <span className="relative z-10 flex items-center justify-center gap-x-2 text-[15px] md:text-[17px]">View</span>
+                                    <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"></span>
+                                </div>
+                                <TabView options={view} chosenView={tabView} setTabView={setTabView} />
                             </div>
-                            <TabView options={view} chosenView={tabView} setTabView={setTabView} />
-                        </div>
-                    </motion.div>
-                )} 
+                        </motion.div>
+                    )} 
 
-                <div className='mt-10 pb-16'>
-                    {tabView === 'Grid' ? ( 
-                        <GridViewProject projectDetails={projectDetails} />
-                    ) : (
-                        <ListViewProject projectDetails={projectDetails} />
-                    )}
+                    <div className='mt-10 pb-16'>
+                        {tabView === 'Grid' ? ( 
+                            <GridViewProject projectDetails={projectDetails} />
+                        ) : (
+                            <ListViewProject projectDetails={projectDetails} />
+                        )}
+                    </div>
                 </div>
-            </div>
+            )}
 
             {open && (
                 <div className=' fixed top-0 left-0 w-full h-full'/>

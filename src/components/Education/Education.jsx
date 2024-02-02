@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import { TextReveal } from '../../helpingComponents/textReveal/TextReveal'
 import { motion, useScroll } from 'framer-motion'
@@ -9,11 +9,22 @@ import school from '../../assets/education/school.jpg'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import StarCanvas from '../../helpingComponents/animate/StarCanvas'
 import { TracingBeam } from './TracingBeam'
+import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation'
 
 const Education = () => {
     const {mode} = useTheme()
     const {open} = useBgContext()
     const containerRef = useRef()
+    const [loading, setLoading] = useState(true)
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setLoading(false)
+        }, 1600);
+
+        return () => clearTimeout(timer)
+    }, [])
+
 
     const Institutions = ({logo, course, name, duration, currentState}) => {
         return (
@@ -55,49 +66,53 @@ const Education = () => {
 
     return (
         <>
-            <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] pl-3 pr-2 sm:pl-10 sm:pr-10 sm:px-10 lg:px-8 2xl:px-28 pb-10 min-h-screen`}>
-                <StarCanvas/>
-                <div className={`text-[30px] sm:text-5xl md:text-[55px] lg:text-[73px] 2xl:text-8xl font-extrabold pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
-                    <TextReveal child={`My Education `}/>
-                </div>
-
-                <TracingBeam>
-                    <div 
-                    className='mt-4 sm:mt-9 xl:mt-14  w-full relative flex justify-center items-center'
-                    ref={containerRef}>
-                        <div className='space-y-14 flex flex-col z-20'>
-                            <Institutions 
-                                logo={vuLogo} 
-                                course={`Master's of Computer Application`} 
-                                name={'Vidyasagar University'}
-                                duration={'2022 - 2024'}
-                                currentState={`Currently pursuing`}
-                            />
-                            <Institutions
-                                logo={mdnCLG} 
-                                course={`Bachelors of Computer Application`} 
-                                name={'Midnapore College (Autonomous)'}
-                                duration={'2019 - 2022'}
-                                currentState={`Graduated (81.24%)`}
-                            />
-                            <Institutions
-                                logo={school} 
-                                course={`Higher Secondary (10 + 2)`} 
-                                name={`Sri Narayan Vidyabhaban Boys' High School`}
-                                duration={'2016 - 2018'}
-                                currentState={`Passed (68.80%)`}
-                            />
-                            <Institutions
-                                logo={school} 
-                                course={`Secondary (10)`} 
-                                name={`Sri Narayan Vidyabhaban Boys' High School`}
-                                duration={'2014 - 2016'}
-                                currentState={`Passed (82%) `}
-                            />
-                        </div>
+            {loading ? (
+                <PageLoadingAnimation/>
+            ) : (
+                <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] pl-3 pr-2 sm:pl-10 sm:pr-10 sm:px-10 lg:px-8 2xl:px-28 pb-10 min-h-screen`}>
+                    <StarCanvas/>
+                    <div className={`text-[30px] sm:text-5xl md:text-[55px] lg:text-[73px] 2xl:text-8xl font-extrabold pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
+                        <TextReveal child={`My Education `}/>
                     </div>
-                </TracingBeam>
-            </div>
+
+                    <TracingBeam>
+                        <div 
+                        className='mt-4 sm:mt-9 xl:mt-14  w-full relative flex justify-center items-center'
+                        ref={containerRef}>
+                            <div className='space-y-14 flex flex-col z-20'>
+                                <Institutions 
+                                    logo={vuLogo} 
+                                    course={`Master's of Computer Application`} 
+                                    name={'Vidyasagar University'}
+                                    duration={'2022 - 2024'}
+                                    currentState={`Currently pursuing`}
+                                />
+                                <Institutions
+                                    logo={mdnCLG} 
+                                    course={`Bachelors of Computer Application`} 
+                                    name={'Midnapore College (Autonomous)'}
+                                    duration={'2019 - 2022'}
+                                    currentState={`Graduated (81.24%)`}
+                                />
+                                <Institutions
+                                    logo={school} 
+                                    course={`Higher Secondary (10 + 2)`} 
+                                    name={`Sri Narayan Vidyabhaban Boys' High School`}
+                                    duration={'2016 - 2018'}
+                                    currentState={`Passed (68.80%)`}
+                                />
+                                <Institutions
+                                    logo={school} 
+                                    course={`Secondary (10)`} 
+                                    name={`Sri Narayan Vidyabhaban Boys' High School`}
+                                    duration={'2014 - 2016'}
+                                    currentState={`Passed (82%) `}
+                                />
+                            </div>
+                        </div>
+                    </TracingBeam>
+                </div>
+            )}
 
             {open && (
                 <div className=' fixed top-0 left-0 w-full h-full'/>
