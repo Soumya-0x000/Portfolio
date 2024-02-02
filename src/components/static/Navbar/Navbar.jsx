@@ -24,7 +24,7 @@ const mobileMenuLinks = navigationLink.map(({link, icon, title}) => ({link, icon
 const Navbar = () => {
     const navigate = useNavigate()
     const {mode} = useTheme()
-    const {open, setOpen, record} = useBgContext()
+    const {open, setOpen} = useBgContext()
     const [collapseNav, setCollapseNav] = useState(false)
     const [btnText, setBtnTxt] = useState(window.innerWidth <= 1024 ? 'PORTFOLIO' : 'SSD PORTFOLIO')
     const [navActive, setNavActive] = useState(Array(navigationLink.length).fill(false))
@@ -87,30 +87,6 @@ const Navbar = () => {
             window.removeEventListener('resize', handleResize)
         }
     }, [])
-
-    // useLayoutEffect(() => {
-    //     const handleResize = () => {
-    //         const widthScr = window.innerWidth
-
-    //         if(widthScr <= 1024) {
-    //             setOpen(record)
-    //         } else {
-    //             if(widthScr <= 1024) {
-    //                 setOpen(record)
-    //             } else {
-    //                 setOpen(false)
-    //             }
-    //         };
-    //     };
-
-    //     handleResize()
-
-    //     window.addEventListener('resize', handleResize)
-        
-    //     return () => {
-    //         window.removeEventListener('resize', handleResize)
-    //     }
-    // }, [record])
 
     return (
         <div 
