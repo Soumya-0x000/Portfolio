@@ -45,14 +45,11 @@ const Home = () => {
     const {open} = useBgContext()
     const text = 'Myself Soumya, who loves to Code and Design.'
     const [loading, setLoading] = useState(true)
-    const handleImgLoad = (e) => {
-        console.log(e);
-    }
 
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false)
-        }, 1600);
+        }, 1900);
 
         return () => clearTimeout(timer)
     }, [])
@@ -72,7 +69,7 @@ const Home = () => {
                         animate={{y: 0, opacity: 1, transition:{duration: .5}}}>
                             <Tilt className=''>
                                 <div className={`max-w-[350px] xl:max-w-[900px] min-w-[200px] sm:min-w-[400px] 2xl:min-w-[532px] lg:min-w-[450px] xl:min-w-[500px] 3xl:min-w-[600px] 3xl:min-h-[600px] rounded-full overflow-hidden box`}>
-                                    <img src={mySelf} className={`w-full h-full rounded-full ${mode === 'dark' ? 'border border-darkBlue' : ''}`} onLoad={(e) => handleImgLoad(e)} />
+                                    <img src={mySelf} className={`w-full h-full rounded-full ${mode === 'dark' ? 'border border-darkBlue' : ''}`} />
                                 </div>
                             </Tilt>
                         </motion.div>
