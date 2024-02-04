@@ -6,7 +6,6 @@
     height: 30px;
     width: 30px;
     border-radius: 50%;
-    border: 2px solid rgb(30 41 59);
     background: #16b0c1;
     animation: jump 0.8s ease-in-out infinite alternate;
 }
