@@ -69,6 +69,7 @@ const EncryptButton = ({mainText}) => {
                 <RiAccountCircleLine className="text-xl" />
                 <span>{text}</span>
             </div>
+            
             <motion.span
                 initial={{y: "100%"}}
                 animate={{y: "-100%"}}

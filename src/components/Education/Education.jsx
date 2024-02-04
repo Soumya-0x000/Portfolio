@@ -3,13 +3,13 @@ import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import { TextReveal } from '../../helpingComponents/textReveal/TextReveal'
 import { motion, useScroll } from 'framer-motion'
 import vuLogo from '../../assets/education/vu_logo.jpg'
-import vuGate from '../../assets/education/vu-gate.jpg'
 import mdnCLG from '../../assets/education/mdnCLG.png'
 import school from '../../assets/education/school.jpg'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import StarCanvas from '../../helpingComponents/animate/StarCanvas'
 import { TracingBeam } from './TracingBeam'
 import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation'
+import Footer from '../static/Footer/Footer'
 
 const Education = () => {
     const {mode} = useTheme()
@@ -70,7 +70,7 @@ const Education = () => {
                 <PageLoadingAnimation/>
             ) : (
                 <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] pl-3 pr-2 sm:pl-10 sm:pr-10 sm:px-10 lg:px-8 2xl:px-28 pb-10 min-h-screen`}>
-                    <StarCanvas/>
+                    <StarCanvas starsCount = {'5000'} />
                     <div className={`text-[30px] sm:text-5xl md:text-[55px] lg:text-[73px] 2xl:text-8xl font-extrabold pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
                         <TextReveal child={`My Education `}/>
                     </div>
@@ -117,6 +117,8 @@ const Education = () => {
             {open && (
                 <div className=' fixed top-0 left-0 w-full h-full'/>
             )}
+
+            <Footer/>
         </>
     )
 }

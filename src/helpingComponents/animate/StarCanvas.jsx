@@ -6,8 +6,9 @@ import { useTheme } from "../hook/ThemeContext";
 
 const StarBackground = (props) => {
     const ref = useRef();
+    console.log(props.starsCount)
     const [sphere] = useState(() =>
-        random.inSphere(new Float32Array(5000), { radius: 1.2 })
+        random.inSphere(new Float32Array(props.starsCount), { radius: 1.2 })
     );
     
     useFrame((state, delta) => {
@@ -16,7 +17,7 @@ const StarBackground = (props) => {
     });
     
     return (
-        <group rotation={[0, 0, Math.PI / 4]}>
+        <group rotation={[0, 0, Math.PI / 9]}>
             <Points ref={ref} positions={sphere} stride={3} frustumCulled {...props}>
                 <PointMaterial
                     transparent
@@ -30,14 +31,15 @@ const StarBackground = (props) => {
     );
 };
 
-const StarsCanvas = () => {
+const StarsCanvas = ({starsCount}) => {
     const {mode} = useTheme()
+
     return (
         <div className={`-z-10 w-full min-h-screen max-h-full fixed inset-0 ${mode === 'dark' ? 'bg-slate-900' : ''}`}>
             <Canvas camera={{ position: [0, 0, 1] }}>
                 <Suspense fallback={null}>
                     {mode === 'dark' ? (
-                        <StarBackground/>
+                        <StarBackground starsCount = {starsCount}/>
                     ) : (
                         <></>
                     )}

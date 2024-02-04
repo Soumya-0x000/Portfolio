@@ -6,6 +6,7 @@ import Skills from './pages/Skills'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import StarsCanvas from '../../helpingComponents/animate/StarCanvas'
 import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation'
+import Footer from '../static/Footer/Footer'
 
 const About = () => {
     const {mode} = useTheme()
@@ -28,7 +29,7 @@ const About = () => {
                 <PageLoadingAnimation/>
             ) : (
                 <div className={`${mode === 'dark' ? 'bg-darkSlat text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-10 pt-[70px] sm:pt-[60px] min-h-screen`}>
-                    <StarsCanvas/>
+                    <StarsCanvas starsCount = {'5000'} />
                     {/* heading */}
                     <div className={` text-center text-[27px] sm:text-6xl md:text-[80px] font-extrabold 2xl:text-8xl pt-8 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} `}
                     ref={containerRef}>
@@ -45,6 +46,8 @@ const About = () => {
             {open && (
                 <div className=' fixe top-0 left-0 w-full h-full'/>
             )}
+
+            <Footer/>
         </>
     )
 }

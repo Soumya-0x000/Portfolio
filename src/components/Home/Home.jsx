@@ -12,6 +12,7 @@ import { CardSpotlight } from '../../helpingComponents/CardSpotlight/CardSpotlig
 import StarsCanvas from '../../helpingComponents/animate/StarCanvas'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation'
+import Footer from '../static/Footer/Footer'
 
 const animateHeading = {
     initial: {
@@ -60,7 +61,7 @@ const Home = () => {
                 <PageLoadingAnimation/>
             ) : (
                 <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px]'} relative pt-[100px] sm:pt-[60px] min-h-screen`}>
-                    <StarsCanvas/>
+                    <StarsCanvas starsCount = {'5000'} />
                     {/* Main */}
                     <div className='flex flex-col lg:flex-row items-center justify-center px-3 md:p-6 2xl:px-[140px] 2xl:pr-[170px] gap-x-10 2xl:gap-x-[120px] sm:gap-y-[50px] min-h-screen'>
                         {/* TiltImg Image */}
@@ -136,6 +137,8 @@ const Home = () => {
             {open && (
                 <div className=' fixed top-0 left-0 bottom-0 w-full'/>
             )}
+
+            <Footer/>
         </>
     )
 }

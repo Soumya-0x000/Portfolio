@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
+import React, { useLayoutEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import ModeSwitch from './Modes/ModeSwitch'
 import AnimateText from '../../../helpingComponents/animate/AnimateText'
@@ -13,7 +13,7 @@ import MobileMenu from './MobileMenu'
 import { useBgContext } from '../../../helpingComponents/hook/BgBlurContext'
 
 const navigationLink = [
-    {link: '/', icon: <IoHomeOutline/>, title: 'Home', onHoverLight: 'hover:text-yellow-600', onHoverDark: 'hover:text-yellow-200', undrlnBGLight: 'bg-yellow-700', undrlnBGDark: 'bg-yellow-200'},
+    {link: '/home', icon: <IoHomeOutline/>, title: 'Home', onHoverLight: 'hover:text-yellow-600', onHoverDark: 'hover:text-yellow-200', undrlnBGLight: 'bg-yellow-700', undrlnBGDark: 'bg-yellow-200'},
     {link: '/about', icon: <FaRegAddressCard/>, title: 'About', onHoverLight: 'hover:text-cyan-600', onHoverDark: 'hover:text-cyan-300', undrlnBGLight: 'bg-cyan-700', undrlnBGDark: 'bg-cyan-300'},
     {link: '/projects', icon: <GoProjectSymlink/>, title: 'Projects', onHoverLight: 'hover:text-rose-600', onHoverDark: 'hover:text-rose-300', undrlnBGLight: 'bg-rose-700', undrlnBGDark: 'bg-rose-300'},
     {link: '/education', icon: <MdOutlineArticle/>, title: 'Education', onHoverLight: 'hover:text-green-600', onHoverDark: 'hover:text-green-300', undrlnBGLight: 'bg-green-700', undrlnBGDark: 'bg-green-300'},
@@ -78,7 +78,6 @@ const Navbar = () => {
                 setOpen(false)
             };
         };
-
         handleResize()
 
         window.addEventListener('resize', handleResize)
@@ -92,7 +91,7 @@ const Navbar = () => {
         <div 
         className={`flex items-center justify-between w-full px-1 2xl:px-28 py-2 ${
             mode === 'dark' ? 'bg-darkBlue text-light border-b border-b-blue-400' : 'border-b-lighter bg-violet-100'
-        } z-50 fixed`}>
+        } z-40 fixed`}>
             <motion.div 
             className=' w-full flex items-center justify-between px-1 md:px-3'
             initial={{ y: -100 }}

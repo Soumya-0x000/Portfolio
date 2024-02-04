@@ -8,6 +8,7 @@ import StarsCanvas from '../../helpingComponents/animate/StarCanvas';
 import Form from './Form';
 import { motion } from 'framer-motion';
 import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation';
+import Footer from '../static/Footer/Footer';
 
 const childVariants = {
     initial: {y: 300, },
@@ -50,7 +51,7 @@ const Feedback = () => {
                 <PageLoadingAnimation/>
             ) : (
                 <div className={`${mode === 'dark' ? 'text-lighter' : ''} ${open && 'blur-[7px] cursor-not-allowed'} pt-[80px] sm:pt-[100px] px-1 sm:px-5 lg:px-8 2xl:px-28 min-h-screen `}>
-                    <StarsCanvas/>
+                    <StarsCanvas starsCount = {'5000'} />
 
                     <motion.div className={`text-[25px] sm:text-5xl md:text-[55px] lg:text-[66px] 2xl:text-[80px] font-extrabold sm:pt-6 md:pt-8 xl:pt-14 lg:pt-16 lg:px-14 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'} z-20 flex items-center justify-center gap-x-5`}>
                         <TextReveal child={`Let me know your thoughts!`}/>
@@ -98,6 +99,8 @@ const Feedback = () => {
             {open && (
                 <div className=' fixed top-0 left-0 w-full h-full'/>
             )}
+
+            <Footer/>
         </>
     )
 }

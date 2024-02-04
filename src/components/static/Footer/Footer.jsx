@@ -20,11 +20,13 @@ const Footer = () => {
                         <div className=''>
                             2023 © All Rights Reserved.
                         </div>
+                        
                         <div className='flex items-center gap-2'>
                             Built with 
                             <FontAwesomeIcon icon={faHeart} style={{color: "#f54d77",}} />
                             by <span className={`border-b ${mode === 'dark' ? 'border-b-light' : 'border-b-black'}`}>Soumya</span>
                         </div>
+
                         <div className={`border-b ${mode === 'dark' ? 'border-b-light' : 'border-b-black'}`}>
                             Say Hello
                         </div>

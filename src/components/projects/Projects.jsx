@@ -19,6 +19,7 @@ import ListViewProject from './components/view/ListViewProject'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import StarsCanvas from '../../helpingComponents/animate/StarCanvas'
 import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation'
+import Footer from '../static/Footer/Footer'
 
 const projectDetails = [
     {
@@ -123,7 +124,7 @@ const Projects = () => {
                 <PageLoadingAnimation/>
             ) : (
                 <div className={`${mode === 'dark' ? 'text-light' : ''} ${open && 'blur-[7px] cursor-not-allowed'} px-5 md:px-3 pt-[70px] sm:pt-[60px] min-h-screen`}>
-                    <StarsCanvas/>
+                    <StarsCanvas starsCount = {'5000'} />
                     <div className={`text-center text-[25px] sm:text-5xl md:text-[55px] lg:text-[73px] font-extrabold 2xl:text-8xl pt-3 sm:pt-6 xl:pt-14 lg:pt-16 lg:px-20 tracking-wide ${mode === 'dark' ? 'text-indigo-400' : 'text-indigo-500'}`}>
                         <TextReveal child={`Projects I've completed!`}/>
                     </div>
@@ -157,6 +158,8 @@ const Projects = () => {
             {open && (
                 <div className=' fixed top-0 left-0 w-full h-full'/>
             )}
+
+            <Footer/>
         </>
     )
 }
