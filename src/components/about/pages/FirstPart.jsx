@@ -118,7 +118,7 @@ const FirstPart = () => {
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.3} decimals={1}/>+</div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.5} decimals={1}/>+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Years of Experience</div>
                         </motion.div>
                     </>
