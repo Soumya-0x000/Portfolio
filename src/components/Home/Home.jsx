@@ -8,11 +8,12 @@ import HireMe from './hireMe/HireMe'
 import Tilt from 'react-parallax-tilt';
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import './borderAnimation.css'
-import { CardSpotlight } from '../../helpingComponents/CardSpotlight/CardSpotlight'
+import { ResumeBtnSopLight } from '../../helpingComponents/ResumeBtnSopLight/ResumeBtnSopLight'
 import StarsCanvas from '../../helpingComponents/animate/StarCanvas'
 import { useBgContext } from '../../helpingComponents/hook/BgBlurContext'
 import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAnimation/PageLoadingAnimation'
 import Footer from '../static/Footer/Footer'
+import resume from '../../assets/Soumya_Resume.pdf'
 
 const animateHeading = {
     initial: {
@@ -104,9 +105,9 @@ const Home = () => {
                             className='flex items-center gap-x-6'
                             initial={{y: 400}}
                             animate={{y: 0, transition:{duration: 1}}}>
-                                <a href="../../assets/Soumya_Resume.pdf"
+                                <a href={resume}
                                 download={true}>
-                                    <CardSpotlight 
+                                    <ResumeBtnSopLight 
                                         children={'Resume'} 
                                         icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} />} 
                                     />

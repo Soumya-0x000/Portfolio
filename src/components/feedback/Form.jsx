@@ -3,7 +3,7 @@ import { RxReset } from "react-icons/rx";
 import { VscSend } from "react-icons/vsc";
 import { useTheme } from '../../helpingComponents/hook/ThemeContext';
 import axios from 'axios';
-import LoadingAnimation from '../../helpingComponents/animate/LoadingAnimation';
+import FeedbackSendingAnimation from '../../helpingComponents/animate/FeedbackSendingAnimation';
 import { motion } from 'framer-motion';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -207,7 +207,7 @@ const Form = () => {
             
             {isSending && (
                 <div className=' fixed top-0 left-0 w-full h-full'>
-                    <LoadingAnimation/>
+                    <FeedbackSendingAnimation/>
                 </div>
             )}
 

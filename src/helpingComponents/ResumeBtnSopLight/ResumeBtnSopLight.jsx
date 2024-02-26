@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useTheme } from "../hook/ThemeContext";
 
-export const CardSpotlight = ({children, icon}) => {
+export const ResumeBtnSopLight = ({children, icon}) => {
     const {mode} = useTheme()
     const divRef = useRef(null);
     const [isFocused, setIsFocused] = useState(false);

@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import ModeSwitch from './Modes/ModeSwitch'
-import AnimateText from '../../../helpingComponents/animate/AnimateText'
+import ScanEncryptAnimationTextBtn from '../../../helpingComponents/animate//ScanEncryptAnimationTextBtn'
 import { motion } from 'framer-motion'
 import { IoHomeOutline } from "react-icons/io5"
 import { GoProjectSymlink } from "react-icons/go"
@@ -133,7 +133,7 @@ const Navbar = () => {
                 <ModeSwitch/>
                 
                 <button className='hidden sm:block' onClick={() => !open && navigate(`/`)}>
-                    <AnimateText mainText={btnText}/>
+                    <ScanEncryptAnimationTextBtn mainText={btnText}/>
                 </button>
             </motion.div>
         </div>

@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { BackgroundGradientAnimation } from './BackgroundGradientAnimation';
-import AnimateText from '../../helpingComponents/animate/AnimateText';
+import ScanEncryptAnimationTextBtn from '../../helpingComponents/animate/ScanEncryptAnimationTextBtn';
 import { TypewriterEffectSmooth } from '../../helpingComponents/animate/typeWriter/TypewriterEffectSmooth';
 
 const Intro = () => {
@@ -32,7 +32,7 @@ const Intro = () => {
             <div 
             className='z-50 rounded-xl absolute top-5 left-1/2 transform -translate-x-1/2 text-center cursor-pointer'
             onClick={() => navigate('/home')}>
-                <AnimateText mainText={text}/>
+                <ScanEncryptAnimationTextBtn mainText={text}/>
             </div>
         </BackgroundGradientAnimation>
     )
