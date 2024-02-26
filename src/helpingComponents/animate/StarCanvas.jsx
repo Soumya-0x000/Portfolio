@@ -6,7 +6,6 @@ import { useTheme } from "../hook/ThemeContext";
 
 const StarBackground = (props) => {
     const ref = useRef();
-    console.log(props.starsCount)
     const [sphere] = useState(() =>
         random.inSphere(new Float32Array(props.starsCount), { radius: 1.2 })
     );

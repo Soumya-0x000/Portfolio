@@ -23,6 +23,12 @@ const Intro = () => {
         return () => window.removeEventListener('resize', handleText)
     }, [])
 
+    const handleNavigateTo = () => {
+        setTimeout(() => {
+            navigate('/home')
+        }, 400);
+    }
+
     return (
         <BackgroundGradientAnimation>
             <div className='absolute top-[50%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center z-50'>
@@ -31,7 +37,7 @@ const Intro = () => {
 
             <div 
             className='z-50 rounded-xl absolute top-5 left-1/2 transform -translate-x-1/2 text-center cursor-pointer'
-            onClick={() => navigate('/home')}>
+            onClick={handleNavigateTo}>
                 <ScanEncryptAnimationTextBtn mainText={text}/>
             </div>
         </BackgroundGradientAnimation>

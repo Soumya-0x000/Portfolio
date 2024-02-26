@@ -87,6 +87,12 @@ const Navbar = () => {
         }
     }, [])
 
+    const handleNavigateTo = () => {
+        setTimeout(() => {
+            navigate('/')
+        }, 400);
+    }
+    
     return (
         <div 
         className={`flex items-center justify-between w-full px-1 2xl:px-28 py-2 ${
@@ -132,7 +138,7 @@ const Navbar = () => {
 
                 <ModeSwitch/>
                 
-                <button className='hidden sm:block' onClick={() => !open && navigate(`/`)}>
+                <button className='hidden sm:block' onClick={() => !open && handleNavigateTo()}>
                     <ScanEncryptAnimationTextBtn mainText={btnText}/>
                 </button>
             </motion.div>
