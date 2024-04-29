@@ -5,7 +5,7 @@ import js from '../../../assets/skills/js.svg'
 import redux from '../../../assets/skills/redux.svg'
 import react from '../../../assets/skills/react.png'
 import framer from '../../../assets/skills/framer-motion.svg'
-import Firebase from '../../../assets/skills/firebase.svg'
+import Supabase from '../../../assets/skills/supabase.png'
 import mui from '../../../assets/skills/material-ui.png'
 import tailwind from '../../../assets/skills/tailwind-css.svg'
 import sass from '../../../assets/skills/sass.svg'
@@ -40,7 +40,7 @@ const squareData = [
     {id: 6, name: 'Tailwind CSS', src: tailwind, shadow: 'shadow-sky-400', border: 'border-sky-400'},
     {id: 7, name: 'SASS', src: sass, shadow: 'shadow-pink-400', border: 'border-pink-400'},
     {id: 8, name: 'Framer Motion', src: framer, shadow: 'shadow-violet-700', border: 'border-violet-700'},
-    {id: 9, name: 'Firebase', src: Firebase, shadow: 'shadow-yellow-400', border: 'border-yellow-400'},
+    {id: 9, name: 'Supabase', src: Supabase, shadow: 'shadow-green-400', border: 'border-yellow-400'},
     {id: 10, name: 'Material-UI', src: mui, shadow: 'shadow-blue-600', border: 'border-blue-600'},
     {id: 11, name: 'Git', src: git, shadow: 'shadow-red-400', border: 'border-red-400'},
     {id: 12, name: 'GitHub', src: github, shadow: 'shadow-slate-400', border: 'border-slate-400'},
