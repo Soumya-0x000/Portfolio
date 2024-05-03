@@ -111,7 +111,7 @@ const FirstPart = () => {
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
                             <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={7}/></div>
-                            <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Large Project completed</div>
+                            <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Large Projects completed</div>
                         </motion.div>
                         
                         <motion.div 
