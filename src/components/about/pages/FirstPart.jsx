@@ -94,7 +94,7 @@ const FirstPart = () => {
 
             {/* Numbers */}
             <div
-            className='2xl:pl-[80px] flex flex-row w-full xxl:w-fit xxl:flex-col items-center justify-between gap-x-[27px] xl:gap-x-0 gap-y-[150px]'
+            className='2xl:pl-[80px] flex flex-row w-full xxl:w-fit xxl:flex-col items-center justify-between gap-x-[27px] xl:gap-x-0 gap-y-[130px]'
             ref={refElement}> 
                 {isInView && (
                     <>     
@@ -102,7 +102,7 @@ const FirstPart = () => {
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={16} />+</div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={19} />+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Projects completed</div>
                         </motion.div>
 
@@ -110,15 +110,23 @@ const FirstPart = () => {
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={3}/></div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={7}/></div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Large Project completed</div>
+                        </motion.div>
+                        
+                        <motion.div 
+                        className='flex flex-col items-center justify-center 2xl:pl-[0px]'
+                        initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
+                        animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={2}/></div>
+                            <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Undergoing projects</div>
                         </motion.div>
 
                         <motion.div 
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.5} decimals={1}/>+</div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.7} decimals={1}/>+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Years of Experience</div>
                         </motion.div>
                     </>

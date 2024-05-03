@@ -1,6 +1,8 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import movix from '../../assets/project/movix.png'
+import pewTube from '../../assets/project/pewTube.png'
+import stumate from '../../assets/project/stumate.png'
 import dashboard from '../../assets/project/dashboard.png'
 import codehelp from '../../assets/project/codehelp.png'
 import portfolio from '../../assets/project/portfolio.png'
@@ -22,6 +24,20 @@ import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAni
 import Footer from '../static/Footer/Footer'
 
 const projectDetails = [
+    {
+        img: pewTube, name: 'PewTube', 
+        ghLink: 'https://github.com/Soumya-0x000/SSDtube', 
+        lvLink: 'https://ssdtube.vercel.app/',
+        usedTech: ['React JS', 'Tailwind CSS', 'React Router DOM', 'Redux Toolkit', 'Youtube Data API V3', 'React Player', 'Lazy load Image', 'Skeleton', 'React Select', 'Axios'],
+        description: `PewTube, inspired by YouTube, is my creation utilizing the features provided by YouTube Data API V3. It includes features such as Watch Later, commenting, and replying to comments.`
+    },
+    {
+        img: stumate, name: 'Stumate', 
+        ghLink: 'https://github.com/Soumya-0x000/placements-management-system', 
+        lvLink: 'https://placements-management-system.vercel.app/',
+        usedTech: ['React JS', 'Tailwind CSS', 'React Router DOM', 'Material UI', 'Bootstrap', 'Formik', 'Day JS', 'Google MapReact', 'Axios', 'Chart JS', 'YUP'],
+        description: `Stumate, an offline placement management system, is built by me. It tracks students' placement status, schedules future interviews, and offers various other features. I developed the frontend of this full-stack application.`
+    },
     {
         img: movix, name: 'Movix', 
         ghLink: 'https://github.com/Soumya-0x000/Movix', 

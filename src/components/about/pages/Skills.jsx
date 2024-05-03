@@ -11,6 +11,8 @@ import tailwind from '../../../assets/skills/tailwind-css.svg'
 import sass from '../../../assets/skills/sass.svg'
 import git from '../../../assets/skills/git.svg'
 import github from '../../../assets/skills/github.svg'
+import vercel from '../../../assets/skills/vercel.png'
+import vite from '../../../assets/skills/vite.png'
 import { motion } from 'framer-motion'
 import { useTheme } from '../../../helpingComponents/hook/ThemeContext'
 
@@ -44,6 +46,8 @@ const squareData = [
     {id: 10, name: 'Material-UI', src: mui, shadow: 'shadow-blue-600', border: 'border-blue-600'},
     {id: 11, name: 'Git', src: git, shadow: 'shadow-red-400', border: 'border-red-400'},
     {id: 12, name: 'GitHub', src: github, shadow: 'shadow-slate-400', border: 'border-slate-400'},
+    {id: 13, name: 'Vercel', src: vercel, shadow: 'shadow-slate-400', border: 'border-slate-600'},
+    {id: 14, name: 'Vite', src: vite, shadow: 'shadow-violet-400', border: 'border-yellow-400'},
 ];
   
 const generateSquares = (mode, isShuffle) => {

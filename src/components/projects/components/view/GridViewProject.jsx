@@ -40,18 +40,6 @@ const GridViewProject = ({projectDetails}) => {
         };
     }, []);
 
-    const handleShowLink = (id) => {
-        const updatedLinks = [...showLiveLink]
-        updatedLinks[id] = true
-        setShowLiveLink(updatedLinks)
-    }
-    
-    const handleHideLink = (id) => {
-        const updatedLinks = [...showLiveLink]
-        updatedLinks[id] = false
-        setShowLiveLink(updatedLinks)
-    }
-
     const handleFlipShow = (id) => {
         const updatedArr = [...showLiveLink]
         updatedArr[id] = false
@@ -91,11 +79,9 @@ const GridViewProject = ({projectDetails}) => {
         animate='animate'>
             {projectDetails.map((item, index) => (
                 <motion.div 
-                className={`flex flex-col items-center justify-between ${mode === 'dark' ? 'bg-slate-700' : 'bg-slate-300'} cursor-pointer p-3 rounded-xl overflow-hidden`} 
+                className={`group flex flex-col items-center justify-between ${mode === 'dark' ? 'bg-slate-700' : 'bg-slate-300'} cursor-pointer p-3 rounded-xl overflow-hidden`} 
                 key={index}
-                variants={childVariants}
-                onMouseEnter={() => handleShowLink(index)}
-                onMouseLeave={() => handleHideLink(index)}>
+                variants={childVariants}>
                     {/* Image, take look, details */}
                     <div className='relative rounded-xl overflow-hidden h-full '>
                         {/* Img */}
@@ -109,8 +95,8 @@ const GridViewProject = ({projectDetails}) => {
 
                         {/* Take look */}
                         <a href={item.lvLink} rel='noopener noreferrer' target='_blank'>
-                            <div className={`absolute ${showLiveLink[index] ? '-bottom-[110px]' : '-bottom-[195px]'} left-0 right-0 h-32 bg-gradient-to-tr ${mode === 'dark' ? 'from-[#5fffaddf] to-blue-300 text-[#216538]' : 'from-[#7c2497cb] to-blue-600 text-[#92ffe2c3]'} -translate-y-12 transition-all flex items-start pt-4 justify-center`}>
-                                <span className='flex items-center justify-center gap-x-5 font-bold text-2xl md:text-[19px]'>
+                            <div className={`absolute group-hover:-bottom-[110px] -bottom-[195px] left-0 right-0 h-32 bg-gradient-to-tr ${mode === 'dark' ? 'from-[#5fffaddf] to-blue-300 text-[#216538]' : 'from-[#7c2497cb] to-blue-600 text-[#92ffe2c3]'} -translate-y-12 transition-all flex items-start pt-4 justify-center`}>
+                                <span className='flex items-center justify-center gap-x-5 font-bold text-xl lg:text-2xl'>
                                     Take a look
                                     <FontAwesomeIcon icon={faArrowUpRightFromSquare}/>
                                 </span>
