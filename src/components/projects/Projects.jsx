@@ -1,6 +1,7 @@
 import React, { useEffect, useLayoutEffect, useState } from 'react'
 import { useTheme } from '../../helpingComponents/hook/ThemeContext'
 import movix from '../../assets/project/movix.png'
+import assignmentManagement from '../../assets/project/assignmentManagement.png'
 import pewTube from '../../assets/project/pewTube.png'
 import stumate from '../../assets/project/stumate.png'
 import dashboard from '../../assets/project/dashboard.png'
@@ -24,6 +25,13 @@ import PageLoadingAnimation from '../../helpingComponents/animate/PageLoadingAni
 import Footer from '../static/Footer/Footer'
 
 const projectDetails = [
+    {
+        img: assignmentManagement, name: 'Assignment Management System', 
+        ghLink: 'https://github.com/Soumya-0x000/Assignment-Management-System', 
+        lvLink: 'https://assignment-management-system-nine.vercel.app/',
+        usedTech: ['React JS', 'Tailwind CSS', 'Next UI', 'React Router DOM', 'Redux Toolkit', 'Supabase', 'Filepond', 'Framer Motion', 'React icons', 'YUP validation', 'Day JS'],
+        description: `The Assignment Management System simplifies assignment uploads for teachers, submission with deadlines for students, and includes an integrated grading feature for efficient assessment based on student responses.`
+    },
     {
         img: pewTube, name: 'PewTube', 
         ghLink: 'https://github.com/Soumya-0x000/SSDtube', 
