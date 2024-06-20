@@ -26,17 +26,17 @@ const FirstPart = () => {
     const [scrWidth, setScrWidth] = useState(window.innerWidth)
 
     const longBiography = [
-        `Meet Soumya Sankar Das`,
-        `Age: 23`,
-        `Soumya Sankar Das is a passionate and innovative frontend developer and designer, bringing creativity and technical expertise to every project.`,
-        `At the age of 23, Soumya has already made a mark in the field of web development with his comprehensive knowledge of HTML, CSS, and JavaScript. His proficiency extends to the popular React library, allowing him to craft dynamic and interactive user interfaces. Soumya is not just limited to the frontend; he is well-versed in version control using Git and GitHub.`,
-        `One of Soumya's strengths lies in his mastery of modern frontend tools and frameworks. He has successfully integrated Firebase into his projects, leveraging its real-time database and authentication services. His expertise in crafting visually appealing and responsive designs is complemented by his skillful use of Tailwind CSS and SASS.`,
+        `Hello, myself Soumya Sankar Das`,
+        `Hey everyone! I'm still pretty new to the world of web development, just 24 years old. But I've been learning a lot and I'm really passionate about building things online.`,
+        `I'm comfortable working with the foundational languages like HTML, CSS, and JavaScript. I'm also trying to get better at using React to create those cool interactive websites you see nowadays. For the back-end side of things, I'm using Supabase, and I'm learning more about it all the time.`,
+        `I'm still developing my skills, but I'm getting the hang of version control with Git and GitHub. When it comes to design, I'm trying out tools like Tailwind CSS, SASS, Material UI, and Next UI to make websites that look good and work well on any device.  For some extra flair, I'm even starting to explore Framer Motion for animations.`,
+        `I know there's a lot out there to learn, but I'm always eager to improve. It would be awesome to connect with other developers and keep growing in this field!`
     ]
     const shortBiography = [
-        `Meet Soumya Sankar Das`,
-        `Age: 23`,
-        `At the age of 23, Soumya has already made a mark in the field of web development with his comprehensive knowledge of HTML, CSS, and JavaScript. His proficiency extends to the popular React library, Firebase allowing him to craft dynamic and interactive user interfaces. He is well-versed in version control using Git and GitHub.`,
-        `His expertise in crafting visually appealing and responsive designs is complemented by his skillful use of Tailwind CSS and SASS.`,
+        `Hi! I'm Soumya Sankar Das, and I'm 24 years old. I'm excited to be learning web development – it's a world I'm passionate about!`,
+        `I'm always eager to improve and connect with other developers in this exciting field. Let's keep learning and growing together!`,
+        `I also know how to keep track of changes in my code using Git and GitHub. For design, I use tools like Tailwind CSS and SASS to make websites that look good and work well on any device, like phones and tablets. I'm even starting to learn how to add cool animations with Framer Motion!`,
+        `I'm always eager to improve and connect with other developers in this exciting field. Let's keep learning and growing together!`,
     ]
     const [biography, setBiography] = useState(
         window.innerWidth >= 1024 
@@ -102,7 +102,7 @@ const FirstPart = () => {
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={19} />+</div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={21} />+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Projects completed</div>
                         </motion.div>
 
@@ -110,7 +110,7 @@ const FirstPart = () => {
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={7}/></div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={8}/></div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Large Projects completed</div>
                         </motion.div>
                         
@@ -118,7 +118,7 @@ const FirstPart = () => {
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={2}/></div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1}/></div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Undergoing projects</div>
                         </motion.div>
 
@@ -126,7 +126,7 @@ const FirstPart = () => {
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
                         animate={scrWidth >= 1024 ? {x: 0, transition: {duration: .3}} : {y: 0, transition: {duration: .3}}}>
-                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.7} decimals={1}/>+</div>
+                            <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.8} decimals={1}/>+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Years of Experience</div>
                         </motion.div>
                     </>

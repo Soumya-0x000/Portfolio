@@ -22,7 +22,6 @@ const About = () => {
         return () => clearTimeout(timer)
     }, [])
 
-    
     return (
         <>
             {loading ? (
