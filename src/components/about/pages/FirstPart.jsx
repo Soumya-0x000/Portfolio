@@ -27,16 +27,15 @@ const FirstPart = () => {
 
     const longBiography = [
         `Hello, myself Soumya Sankar Das`,
-        `Hey everyone! I'm still pretty new to the world of web development, just 24 years old. But I've been learning a lot and I'm really passionate about building things online.`,
+        `Hey everyone! I'm 24 years old. I've been learning a lot and I'm really passionate about building things online.`,
         `I'm comfortable working with the foundational languages like HTML, CSS, and JavaScript. I'm also trying to get better at using React to create those cool interactive websites you see nowadays. For the back-end side of things, I'm using Supabase, and I'm learning more about it all the time.`,
         `I'm still developing my skills, but I'm getting the hang of version control with Git and GitHub. When it comes to design, I'm trying out tools like Tailwind CSS, SASS, Material UI, and Next UI to make websites that look good and work well on any device.  For some extra flair, I'm even starting to explore Framer Motion for animations.`,
         `I know there's a lot out there to learn, but I'm always eager to improve. It would be awesome to connect with other developers and keep growing in this field!`
     ]
     const shortBiography = [
-        `Hi! I'm Soumya Sankar Das, and I'm 24 years old. I'm excited to be learning web development – it's a world I'm passionate about!`,
-        `I'm always eager to improve and connect with other developers in this exciting field. Let's keep learning and growing together!`,
-        `I also know how to keep track of changes in my code using Git and GitHub. For design, I use tools like Tailwind CSS and SASS to make websites that look good and work well on any device, like phones and tablets. I'm even starting to learn how to add cool animations with Framer Motion!`,
-        `I'm always eager to improve and connect with other developers in this exciting field. Let's keep learning and growing together!`,
+        `Hi there! I'm Soumya Sankar Das, a passionate web developer with 1.8 years of experience under my belt, and I'm always eager to connect and keep growing in this exciting field.`,
+        `I leverage my expertise in HTML, CSS, JavaScript, and React to create functional and engaging websites. I also utilize UI libraries like Material UI and Next UI to enhance the user experience and make your website a joy to use. Supabase keeps the back-end running smoothly, ensuring a seamless user journey.`,
+        `For clean and manageable code, I leverage Git and GitHub for version control. Supabase, on the other hand, empowers smooth back-end management, keeping everything running efficiently.`,
     ]
     const [biography, setBiography] = useState(
         window.innerWidth >= 1024 
@@ -94,10 +93,10 @@ const FirstPart = () => {
 
             {/* Numbers */}
             <div
-            className='2xl:pl-[80px] flex flex-row w-full xxl:w-fit xxl:flex-col items-center justify-between gap-x-[27px] xl:gap-x-0 gap-y-[130px]'
+            className='2xl:pl-[80px] flex flex-row w-full xxl:w-fit xxl:flex-col items-center justify-center gap-x-[27px] xl:gap-x-0 gap-y-[130px]'
             ref={refElement}> 
                 {isInView && (
-                    <>     
+                    <div className=' grid grid-cols-2 sm:grid-cols-4 gap-y-14 gap-x-24'>     
                         <motion.div 
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
@@ -129,7 +128,7 @@ const FirstPart = () => {
                             <div className='text-4xl md:text-6xl 2xl:text-7xl font-bold '><CountUp start={0} end={1.8} decimals={1}/>+</div>
                             <div className='text-[13px] text-center 2xl:w-[180px] sm:text-[17px] 2xl:text-lg '>Years of Experience</div>
                         </motion.div>
-                    </>
+                    </div>
                 )}
             </div>
         </div>

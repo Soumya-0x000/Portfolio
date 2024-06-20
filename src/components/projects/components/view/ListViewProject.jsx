@@ -79,7 +79,7 @@ const ListViewProject = ({ projectDetails }) => {
                             <motion.h2
                             initial={{ opacity: 0, }}
                             animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                            className={`text-2xl font-bold ${mode === 'dark' ? 'text-slate-100 border-cyan-300' : 'text-slate-800 border-cyan-700'} border-b pb-1`}>
+                            className={`text-2xl font-bold ${mode === 'dark' ? 'text-slate-100 border-cyan-300' : 'text-slate-800 border-cyan-700'} border-b pb-1 tracking-wide`}>
                                 {item.name}
                             </motion.h2>
                             
@@ -95,7 +95,7 @@ const ListViewProject = ({ projectDetails }) => {
                             <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                            className="text-slate-300 text-sm xl:text-md mt-10 flex items-center flex-wrap gap-x-2 xl:gap-x-5 gap-y-4 w-full">
+                            className="text-slate-300 text-sm xl:text-md mt-10 flex items-center flex-wrap gap-x-2 xl:gap-3 w-full">
                                 {item.usedTech.map((item, index) => (
                                     <span 
                                     className="bg-indigo-800 text-indigo-200 rounded-full px-4 py-2"
