@@ -24,11 +24,10 @@ const generateSquares = (mode, isShuffle) => {
     return (
         shuffle(skillsData, isShuffle).map((sq) => (
             <motion.div
-            key={sq.id}
             layout
             transition={{ duration: 1.5, type: 'spring' }}
             className={`w-[70px] sm:w-[80px] lg:w-[95px] 2xl:w-[110px] h-[70px] sm:h-[80px] lg:h-[95px] 2xl:h-[110px] rounded-full bg-center object-cover object-center p-[2px] cursor-pointer shadow-lg ${sq.shadow} mx-auto `}
-            >
+            key={sq.id}>
                 <div className={`bg-slate p-2 rounded-full h-full w-full flex items-center justify-center overflow-hidden ${mode === 'dark' ? 'hover:bg-slate-800' : 'hover:bg-slate-200'} transition-all`}>
                     {(sq.type === 'svg') 
                         ? <sq.src/> 

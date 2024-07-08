@@ -61,9 +61,9 @@ const FirstPart = () => {
     }, [])
 
     return (
-        <div className='flex flex-col xxl:flex-row items-start justify-between text-justify xxl:text-justify mt-10 xl:mt-20 gap-x-[80px] gap-y-10'>
+        <div className='flex flex-col items-start justify-between text-justify xxl:text-justify mt-10 xl:mt-20 gap-x-[80px] gap-y-10'>
             {/* biography & img */}
-            <div className='w-full flex flex-col-reverse md:flex-row items-start justify-between gap-10 4xl:gap-x-24'>
+            <div className='w-full flex flex-col-reverse md:flex-row items-start justify-around gap-10 4xl:gap-x- 24'>
                 {/* Biography */}
                 <motion.div
                 className=' md:max-w-[380px] lg:max-w-[460px] xl:max-w-[600px] xxl:max-w-[580px] space-y-3 h-full xl:pr-10 pt-2'
@@ -93,10 +93,10 @@ const FirstPart = () => {
 
             {/* Numbers */}
             <div
-            className='2xl:pl-[80px] flex flex-row w-full xxl:w-fit xxl:flex-col items-center justify-center gap-x-[27px] xl:gap-x-0 gap-y-[130px]'
+            className=' flex flex-row w-full items-center justify-center gap-x-[27px] xl:gap-x-0 gap-y-[130px]'
             ref={refElement}> 
                 {isInView && (
-                    <div className=' grid grid-cols-2 sm:grid-cols-4 gap-y-14 gap-x-24'>     
+                    <div className=' grid grid-cols-2 sm:grid-cols-4 gap-y-14 gap-x-24 w-full'>
                         <motion.div 
                         className='flex flex-col items-center justify-center 2xl:pl-[0px]'
                         initial={scrWidth >= 1024 ? {x: 100} : {y: 100}}
