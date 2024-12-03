@@ -33,7 +33,7 @@ const Education = () => {
             animate={{y: 0, transition: {duration: .8}}} 
             className={`
                 flex flex-col sm:flex-row items-center justify-center gap-x-4 xl:gap-x-14 gap-y-4 rounded-lg 
-                ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-200'} 
+                ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-100'} 
                 px-1.5 md:px-4 lg:px-8 py-2 md:py-4 lg:py-5 `
             }>
                 <div className='w-fit flex md:items-center justify-center lg:justify-normal'>
@@ -42,7 +42,7 @@ const Education = () => {
                     </div>
                 </div>
 
-                <div className={`${mode === 'dark' ? 'bg-slate-900' : 'bg-slate-300'} rounded-xl lg:mt-0 px-2 lg:px-6 py-2 flex flex-col justify-between gap-y-6 xl:gap-y-7 w-full`}>
+                <div className={`${mode === 'dark' ? 'bg-slate-900' : 'bg-slate-200'} rounded-xl lg:mt-0 px-2 lg:px-6 py-2 flex flex-col justify-between gap-y-6 xl:gap-y-7 w-full`}>
                     <span className={`text-[17px] md:text-lg lg:text-xl xl:text-2xl 2xl:text-[32px] ${mode === 'dark' ? 'text-blue-300' : 'text-blue-800'} `}>
                         {course}
                     </span>

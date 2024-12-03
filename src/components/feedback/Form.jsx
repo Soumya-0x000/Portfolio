@@ -131,7 +131,7 @@ const Form = () => {
                             placeholder='First name'
                             value={fstName}
                             onChange={(e) => setFstName(e.target.value)}
-                            className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                            className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-100 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                             min={5}
                             max={20}
                             required
@@ -141,7 +141,7 @@ const Form = () => {
                             placeholder='Middle name'
                             value={midName}
                             onChange={(e) => setMidName(e.target.value)}
-                            className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                            className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-100 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                             min={5}
                             max={20}
                         />
@@ -150,7 +150,7 @@ const Form = () => {
                             placeholder='Last name'
                             value={lstName}
                             onChange={(e) => setLstName(e.target.value)}
-                            className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                            className={`w-full md:w-1/3 rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-100 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                             min={5}
                             max={20}
                             required
@@ -165,7 +165,7 @@ const Form = () => {
                             placeholder='Email address'
                             value={mail}
                             onChange={(e) => setMail(e.target.value)}
-                            className={`w-full rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                            className={`w-full rounded-full pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-100 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                             min={18}
                             max={40}
                             required
@@ -175,14 +175,14 @@ const Form = () => {
                             placeholder='Your message'
                             value={msg}
                             onChange={(e) => setMsg(e.target.value)}
-                            className={`w-full min-h-[16rem] rounded-xl pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-200 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
+                            className={`w-full min-h-[16rem] rounded-xl pl-6 pr-4 py-[12px] text-[14px] ${mode === 'dark' ? 'text-cyan-300 bg-slate-700 focus:ring-violet-300' : 'text-violet-600 bg-violet-100 focus:ring-indigo-700 placeholder:text-violet-400'} border-none outline-none focus:ring-[2px]`}
                             required
                         />
                     </motion.div>
                 </motion.div>
                 
                 {/* Button */}
-                <motion.div variants={childVariants} className='mt-9 flex items-center justify-between mb-7 xl:mb-0'>
+                <motion.div variants={childVariants} className='mt-9 flex items-center justify-between pb-7 xl:mb-0'>
                     <button 
                     type="reset" 
                     onClick={handleReset}

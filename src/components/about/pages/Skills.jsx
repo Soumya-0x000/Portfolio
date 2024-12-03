@@ -70,11 +70,13 @@ const Skills = () => {
         <div className='flex items-center flex-col gap-y-8 sm:gap-y-[50px] mt-20 pb-24'>
             <span className='flex items-center justify-center bo rounded-full'>
                 <motion.span 
-                className={`px-6 md:px-7 xl:px-9 py-1 md:py-2 xl:py-3 text-lg sm:text-xl lg:text-[25px] font-semibold rounded-full ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-300'}`}
+                className={`px-6 md:px-7 xl:px-9 py-1 md:py-2 xl:py-3 text-lg sm:text-xl lg:text-[25px] font-semibold rounded-full ${mode === 'dark' ? 'bg-slate-800' : 'bg-slate-100'}`}
                 initial={{y: 400, scale: 1}}
                 animate={{y: 0, scale: 1, transition:{duration: .5}}}
                 >
-                    <span className={`bg-gradient-to-br ${mode === 'dark' ? 'from-rose-300 via-indigo-300 to-green-300' : 'from-rose-400 via-indigo-500 to-green-500'} bg-clip-text text-transparent z-40`}>I'm proficient💫 in</span>
+                    <span className={`bg-gradient-to-br ${mode === 'dark' ? 'from-rose-300 via-indigo-300 to-green-300' : 'from-rose-400 via-indigo-500 to-green-500'} bg-clip-text text-transparent z-40`}>
+                        I'm proficient💫 in
+                    </span>
                 </motion.span>
             </span>
 

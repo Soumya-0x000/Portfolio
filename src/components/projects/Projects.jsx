@@ -159,7 +159,7 @@ const Projects = () => {
                         initial={{y: -300}}
                         animate={{y: 0, transition:{delay: .7, duration: .8}}}
                         className='w-full flex items-center justify-center mt-3 sm:mt-5 md:mt-7 lg:sticky top-[65px] z-50'>
-                            <div className={`w-full md:w-[80%] lg:w-[70%] xl:w-[60%] px-1 py-1 md:py-2 md:px-2 flex items-center justify-between rounded-full bg-gradient-to-br ${mode === 'dark' ? 'from-[#823c9ef3] to-[#035caaf2]' : 'ring-[1p] from-[#94ffcb] to-[#87bbff] ring-violet-600'} `}>
+                            <div className={`w-full md:w-[80%] lg:w-[70%] xl:w-[60%] px-1 py-1 md:py-2 md:px-2 flex items-center justify-between rounded-full bg-gradient-to-r ${mode === 'dark' ? 'from-[#e39dfff3] to-[#58b1fff2]' : 'ring-[1p] from-[#ceffe7] to-[#b1d3ff] ring-violet-600'} `}>
                                 <div className={`text-white text-sm transition-colors px-4 py-1 sm:py-2 rounded-full relative`}>
                                     <span className="relative z-10 flex items-center justify-center gap-x-2 text-[15px] md:text-[17px]">View</span>
                                     <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-indigo-600 rounded-full"></span>

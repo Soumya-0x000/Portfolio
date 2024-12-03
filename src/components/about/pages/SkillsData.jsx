@@ -17,6 +17,8 @@ import filepond from '../../../assets/skills/filepond.png';
 import threeJs from '../../../assets/skills/threeJs.png';
 import typescript from '../../../assets/skills/typescript.png';
 import nextjs from '../../../assets/skills/nextjs.png';
+import angular from '../../../assets/skills/AngularJS.png';
+import primeng from '../../../assets/skills/primeng.png';
 
 const nextUiSvg = () => {
     return (
@@ -47,6 +49,8 @@ const skillsData = [
     {id: 18, name: 'Next UI', src: nextUiSvg, type: 'svg', shadow: 'shadow-gray-400', border: 'border-gray-400'},
     {id: 19, name: 'TypeScript', src: typescript, type: 'image', shadow: 'shadow-sky-700', border: 'border-sky-700'},
     {id: 20, name: 'NextJS', src: nextjs, type: 'image', shadow: 'shadow-gray-500', border: 'border-gray-400'},
+    {id: 21, name: 'AngularJS', src: angular, type: 'image', shadow: 'shadow-red-500', border: 'border-red-400'},
+    {id: 22, name: 'PrimenNG', src: primeng, type: 'image', shadow: 'shadow-blue-600', border: 'border-blue-400'},
 ];
 
 export default skillsData;
