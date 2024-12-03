@@ -20,16 +20,19 @@ const Footer = () => {
                     <div
                         className={`text-justify w-full md:leading-[22px] text-[11px] sm:text-[14px] lg:text-[16px] z-10`}
                     >
-                        Passionate frontend developer skilled in HTML5, CSS, and
-                        JavaScript, with expertise in React JS for building
-                        scalable and interactive user interfaces. Proficient in
-                        Tailwind CSS, SASS for efficient styling and Redux
-                        Toolkit for state management in large-scale
-                        applications. Experienced in integrating Firebase for
-                        versatile backend functionalities. Adept at
-                        collaborative development using Git and GitHub.
-                        Dedicated to crafting visually appealing and responsive
-                        web experiences.
+                        Versatile frontend developer proficient in HTML, CSS,
+                        JavaScript, and modern frameworks like React, and
+                        Angular. Skilled in TypeScript for type-safe
+                        development, with expertise in styling using Tailwind
+                        CSS, SASS, and PrimeNG. Adept at state management with
+                        Redux and experienced in integrating Supabase for
+                        backend functionality. Knowledgeable in deploying
+                        applications using Vercel and Netlify, with tools like
+                        Vite for fast builds and Filepond for efficient file
+                        uploads. Passionate about creating dynamic 3D
+                        experiences with Three.js and fostering collaboration
+                        using Git and GitHub. Dedicated to crafting responsive,
+                        scalable, and user-focused web applications.
                     </div>
 
                     <div className="pt-6 flex flex-col gap-y-2 md:flex-row items-center justify-between">
