@@ -2,12 +2,12 @@
     border: 7px solid #0000;
     background:  linear-gradient(
         var(--angle),
-        #ffa0a0 0%,
-        #6589ff 40%,
-        #90ffac 80%,
-        #c5ff46 100%
+        #ffc7c7 0%,
+        #a2b8ff 40%,
+        #c2ffd1 80%,
+        #e5ffad 100%
     ) border-box;
-    animation: 5s rotate linear infinite;
+    animation: 10s rotate linear infinite;
 }
 
 @keyframes rotate {
