@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import PropTypes from "prop-types";
 
 export const BackgroundGradientAnimation = ({
     gradientBackgroundStart = "rgb(108, 0, 162)",
@@ -66,24 +67,25 @@ export const BackgroundGradientAnimation = ({
     };
 
     return (
-        <div className={`z-50 h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))] ${containerClassName}`}>
+        <div
+            className={`z-50 h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))] ${containerClassName}`}
+        >
             <svg className="hidden">
                 <defs>
                     <filter id="blurMe">
                         <feGaussianBlur
-                        in="SourceGraphic"
-                        stdDeviation="10"
-                        result="blur"
-                    />
-                    <feColorMatrix
-                        in="blur"
-                        mode="matrix"
-                        values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
-                        result="goo"
-                    />
+                            in="SourceGraphic"
+                            stdDeviation="10"
+                            result="blur"
+                        />
+                        <feColorMatrix
+                            in="blur"
+                            mode="matrix"
+                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8"
+                            result="goo"
+                        />
 
-                    <feBlend in="SourceGraphic" in2="goo" />
-
+                        <feBlend in="SourceGraphic" in2="goo" />
                     </filter>
                 </defs>
             </svg>
@@ -121,4 +123,35 @@ export const BackgroundGradientAnimation = ({
             </div>
         </div>
     );
+};
+
+BackgroundGradientAnimation.propTypes = {
+    gradientBackgroundStart: PropTypes.string,
+    gradientBackgroundEnd: PropTypes.string,
+    firstColor: PropTypes.string,
+    secondColor: PropTypes.string,
+    thirdColor: PropTypes.string,
+    fourthColor: PropTypes.string,
+    fifthColor: PropTypes.string,
+    pointerColor: PropTypes.string,
+    size: PropTypes.string,
+    blendingValue: PropTypes.string,
+    children: PropTypes.node,
+    className: PropTypes.string,
+    interactive: PropTypes.bool,
+    containerClassName: PropTypes.string,
+};
+
+BackgroundGradientAnimation.defaultProps = {
+    gradientBackgroundStart: "rgb(108, 0, 162)",
+    gradientBackgroundEnd: "rgb(0, 17, 82)",
+    firstColor: "18, 113, 255",
+    secondColor: "221, 74, 255",
+    thirdColor: "100, 220, 255",
+    fourthColor: "200, 50, 50",
+    fifthColor: "92, 255, 181",
+    pointerColor: "140, 100, 255",
+    size: "80%",
+    blendingValue: "hard-light",
+    interactive: true,
 };

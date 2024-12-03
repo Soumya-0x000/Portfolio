@@ -1,4 +1,4 @@
-import TawkMessengerReactUmd from '@tawk.to/tawk-messenger-react';
+import TawkMessengerReactUmd from "@tawk.to/tawk-messenger-react";
 
 const LiveChat = () => {
     return (

@@ -1,12 +1,13 @@
 .box {
     border: 7px solid #0000;
-    background:  linear-gradient(
-        var(--angle),
-        #ffc7c7 0%,
-        #a2b8ff 40%,
-        #c2ffd1 80%,
-        #e5ffad 100%
-    ) border-box;
+    background: linear-gradient(
+            var(--angle),
+            #ffc7c7 0%,
+            #a2b8ff 40%,
+            #c2ffd1 80%,
+            #e5ffad 100%
+        )
+        border-box;
     animation: 10s rotate linear infinite;
 }
 
@@ -21,4 +22,3 @@
     initial-value: 0deg;
     inherits: false;
 }
-  
