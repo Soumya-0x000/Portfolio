@@ -34,8 +34,8 @@ const Education = () => {
             currentStatus: "Completed(81%)",
         },
         {
-            name: "MDN College",
-            course: "Diploma in Computer Science",
+            name: "Midnapore College",
+            course: "Bachelor of Computer Application",
             duration: "2019 - 2021",
             logo: mdnCLG,
             currentStatus: "Graduated (81.24%)",
